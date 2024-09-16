@@ -1,0 +1,105 @@
+ LinkedList class ->
+
+
+
+
+
+  --------- merging two sorted linked list --------
+
+    public static void mergeInSort(Linkedlist first, Linkedlist second) {
+       Node f = first.head;
+       Node s = second.head;
+
+       Linkedlist joined = new Linkedlist();
+
+        while (f != null && s != null){
+            if (f.val < s.val){
+                joined.add(f.val);
+                f = f.address;
+            }
+            else {
+                joined.add(s.val);
+                s = s.address;
+            }
+        }
+
+        // if some left over
+        while (f != null){
+             joined.add(f.val);
+             f = f.address;
+        }
+        while (s != null){
+             joined.add(s.val);
+             s = s.address;
+        }
+
+        joined.display();
+    }
+
+
+
+
+ -------------------finding cycle present or not-------------
+
+    public boolean CyclePresentOrNot(){
+    Node slowPointer = head;
+    Node fastPointer = head;
+
+    while (fastPointer != null && fastPointer.address != null){
+        slowPointer = slowPointer.address;
+        fastPointer = fastPointer.address.address;
+
+        if (slowPointer == fastPointer){
+            return true;
+        }
+    }
+    return false;
+    }
+
+
+
+       ------- to make an cycle---------
+
+    public void MakeCycle(int data){
+        Node temp = head;
+
+       Node node = new Node(data);
+       tail.address = node;
+       tail = node;
+
+        for (int i = 0; i < size / 2; i++) {
+            temp = temp.address;
+        }
+        node.address = temp;
+
+       size++;
+    }
+
+
+
+  ---------finding cycle length and also giving cycle index value-----------
+
+    public void cycleLength(){
+       Node slow = head;
+       Node fast = head;
+       int count = 0;
+
+       while(fast != null && fast.address != null){
+           slow = slow.address;
+           fast = fast.address.address;
+
+           if (slow == fast){
+               count = 1;
+               slow = slow.address;
+
+               while (slow != fast){
+                   slow = slow.address;
+                   count++;
+               }
+               break;
+           }
+
+       }
+        System.out.println(count);
+        System.out.println( giveSize() - count + " this is the element where cycle starts");
+    }

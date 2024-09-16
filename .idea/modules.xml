@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Arrays/Arrays.iml" filepath="$PROJECT_DIR$/Arrays/Arrays.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BIg integer &amp; float/BIg integer &amp; float.iml" filepath="$PROJECT_DIR$/BIg integer &amp; float/BIg integer &amp; float.iml" />
+      <module fileurl="file://$PROJECT_DIR$/File Handling/File Handling.iml" filepath="$PROJECT_DIR$/File Handling/File Handling.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Hash Maps/Hash Maps.iml" filepath="$PROJECT_DIR$/Hash Maps/Hash Maps.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Heaps/Heaps.iml" filepath="$PROJECT_DIR$/Heaps/Heaps.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/IdeaProjects.iml" filepath="$PROJECT_DIR$/.idea/IdeaProjects.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Linked list/Linked list.iml" filepath="$PROJECT_DIR$/Linked list/Linked list.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OOP/OOP.iml" filepath="$PROJECT_DIR$/OOP/OOP.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Recursion/Recursion.iml" filepath="$PROJECT_DIR$/Recursion/Recursion.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Recursion Q/Recursion Q.iml" filepath="$PROJECT_DIR$/Recursion Q/Recursion Q.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Stack and Queue/Stack and Queue.iml" filepath="$PROJECT_DIR$/Stack and Queue/Stack and Queue.iml" />
+      <module fileurl="file://$PROJECT_DIR$/String Buffer/String Buffer.iml" filepath="$PROJECT_DIR$/String Buffer/String Buffer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/String Q/String Q.iml" filepath="$PROJECT_DIR$/String Q/String Q.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Trees/Trees.iml" filepath="$PROJECT_DIR$/Trees/Trees.iml" />
+      <module fileurl="file://$PROJECT_DIR$/logic 1/logic 1.iml" filepath="$PROJECT_DIR$/logic 1/logic 1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/logic 2/logic 2.iml" filepath="$PROJECT_DIR$/logic 2/logic 2.iml" />
+    </modules>
+  </component>
+</project>
