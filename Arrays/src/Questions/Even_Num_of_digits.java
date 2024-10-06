@@ -19,6 +19,17 @@ public class Even_Num_of_digits {
         return count;
     }
 
+
+    public int findNumbers2(int[] nums) {
+        int evenCount=0;
+        for(int i=0;i<nums.length;i++){
+            if(((int)(Math.log10(nums[i])+1))%2==0){
+                evenCount++;
+            }
+        }
+        return evenCount;
+    }
+
     public static void main(String[] args) {
         int[] arr = {555,901,482,1771};
         System.out.println(findNumbers(arr));
