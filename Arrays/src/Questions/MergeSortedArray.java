@@ -17,7 +17,16 @@ public class MergeSortedArray {
         int j = n - 1;
         int k = m + n - 1;
 
-        if (nums1[i] > nums2[0]){
+//        if (nums1[i] < nums2[0]){
+//            int q = 0;
+//            int p = m;
+//
+//            while (p < nums1.length) {
+//                nums1[p++] = nums2[q++];
+//            }
+//            }
+
+//        else {
             while (j >= 0){
                 if (i >= 0 && nums1[i] > nums2[j]){
                     nums1[k] = nums1[i];
@@ -29,16 +38,7 @@ public class MergeSortedArray {
                 }
                 k--;
             }
-        }
-        else if (nums1[i] < nums2[0]){
-            int q = 0;
-            int p = m;
-
-            while (p < nums1.length) {
-                nums1[p++] = nums2[q++];
-            }
-        }
-
+//        }
         System.out.println(Arrays.toString(nums1));
     }
 
