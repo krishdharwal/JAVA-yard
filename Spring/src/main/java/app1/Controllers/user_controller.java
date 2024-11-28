@@ -1,36 +1,29 @@
-//package app1.Controllers;
+//package app1;
 //
-//
-//import app1.POJO.user;
-//import app1.Services.user_service;
-//import org.springframework.beans.factory.annotation.Autowired;
+//import org.bson.types.ObjectId;
 //import org.springframework.http.HttpStatus;
 //import org.springframework.http.ResponseEntity;
-//import org.springframework.web.bind.annotation.*;
+//import org.springframework.web.bind.annotation.DeleteMapping;
+//import org.springframework.web.bind.annotation.PathVariable;
+//import org.springframework.web.bind.annotation.PutMapping;
+//import org.springframework.web.bind.annotation.RequestBody;
 //
-//@RestController
-//@RequestMapping("/user")
-//public class user_controller {
-//
-//    @Autowired
-//    public user_service method;
+//public class User_controller {
 //
 //
 //
-//    @GetMapping
-//    public ResponseEntity<?> health(){
-//        return new ResponseEntity<>( "--- ok sir i am running :) ---", HttpStatus.OK);
+//
+//
+//    @PutMapping("/update/{id}")
+//    public ResponseEntity<?> update(@PathVariable ObjectId id, @RequestBody pojo NewUser){
+//        pojo GivenUser =  methods.getById(id);
+//        methods.update(GivenUser,NewUser);
+//        return new ResponseEntity<>( "--- Updated ---", HttpStatus.OK);
+//
 //    }
 //
-//    @GetMapping("/show")
-//    public ResponseEntity<?> give(){
-//        return new ResponseEntity<>( method.giveAll() , HttpStatus.ACCEPTED);
-//    }
-//
-//    @PostMapping
-//    public ResponseEntity<?> save(@RequestBody user user){
-//        method.save(user);
-//        return new ResponseEntity<>("--- data added ---", HttpStatus.OK);
-//    }
-//
+//    @DeleteMapping("/delete/{id}")
+//    public ResponseEntity<?> delete(@PathVariable ObjectId id){
+//        methods.delete(id);
+//        return new ResponseEntity<>( "--- Deleted ---", HttpStatus.OK);
 //}
