@@ -1,7 +1,6 @@
 package Questions;
 
 
-
 public class Linkedlist {
 
     public ListNode head;
@@ -20,7 +19,7 @@ public class Linkedlist {
     public void addATfirst(int val) {
         ListNode node = new ListNode(val);
         // this is assigning the address to head
-        node.address = head;
+        node.next = head;
         // now in this head will point to first node
         head = node;
         // in this if first element is being added means there is no tail so assign tail to first node
@@ -36,7 +35,7 @@ public class Linkedlist {
         while (temp != null) {
             System.out.print(temp.data + " ->");
             // this address refrence is pointing to the next node
-            temp = temp.address;
+            temp = temp.next;
         }
         System.out.println("END");
     }
@@ -49,7 +48,7 @@ public class Linkedlist {
         }
         ListNode node = new ListNode(val);
         // in this the tail's (previous node address) now will point to new node
-        tail.address = node;
+        tail.next = node;
         // this will reassing the tail to new node
         // and after the method will over the node will remain int the scope of this function
         // and only remain is tail's new address
@@ -61,7 +60,7 @@ public class Linkedlist {
     public void access(int idx) {
         ListNode temp = head;
         while (idx != 0) {
-            temp = temp.address;
+            temp = temp.next;
             idx--;
         }
         System.out.println(temp.data);
@@ -79,16 +78,16 @@ public class Linkedlist {
 
         ListNode temp = head;
         for (int i = 0; i < idx; i++) {
-            temp = temp.address;
+            temp = temp.next;
         }
-        ListNode node = new ListNode(val, temp.address);
-        temp.address = node;
+        ListNode node = new ListNode(val, temp.next);
+        temp.next = node;
         size++;
     }
 
     // deleting part's
     public void deleteStart() {
-        head = head.address;
+        head = head.next;
         size--;
     }
 
@@ -96,9 +95,9 @@ public class Linkedlist {
         ListNode temp = head;
         // by this i am able to delete as many elements from the last
         for (int i = 1; i < size; i++) {
-            temp = temp.address;
+            temp = temp.next;
         }
-        temp.address = null;
+        temp.next = null;
         tail = temp;
         size--;
     }
@@ -117,10 +116,10 @@ public class Linkedlist {
 
         ListNode temp = head;
         for (int i = 1; i < idx; i++) {
-            temp = temp.address;
+            temp = temp.next;
         }
         ListNode prev = temp;
-        prev.address = temp.address.address;
+        prev.next = temp.next.next;
         size--;
     }
 
@@ -128,14 +127,14 @@ public class Linkedlist {
 
     public class ListNode {
         public int data;
-        public ListNode address;
+        public ListNode next;
 
         public ListNode() {
 
         }
 
         public ListNode(ListNode address) {
-            this.address = address;
+            this.next = address;
         }
 
         public ListNode(int val) {
@@ -144,7 +143,7 @@ public class Linkedlist {
 
         public ListNode(int val, ListNode address) {
             this.data = val;
-            this.address = address;
+            this.next = address;
         }
     }
 
@@ -159,21 +158,21 @@ public class Linkedlist {
         while (f != null && s != null) {
             if (f.data < s.data) {
                 joined.add(f.data);
-                f = f.address;
+                f = f.next;
             } else {
                 joined.add(s.data);
-                s = s.address;
+                s = s.next;
             }
         }
 
         // if some left over
         while (f != null) {
             joined.add(f.data);
-            f = f.address;
+            f = f.next;
         }
         while (s != null) {
             joined.add(s.data);
-            s = s.address;
+            s = s.next;
         }
 
         joined.display();
@@ -183,9 +182,9 @@ public class Linkedlist {
         ListNode slowPointer = head;
         ListNode fastPointer = head;
 
-        while (fastPointer != null && fastPointer.address != null) {
-            slowPointer = slowPointer.address;
-            fastPointer = fastPointer.address.address;
+        while (fastPointer != null && fastPointer.next != null) {
+            slowPointer = slowPointer.next;
+            fastPointer = fastPointer.next.next;
 
             if (slowPointer == fastPointer) {
                 return true;
@@ -198,13 +197,13 @@ public class Linkedlist {
         ListNode temp = head;
 
         ListNode node = new ListNode(data);
-        tail.address = node;
+        tail.next = node;
         tail = node;
 
         for (int i = 0; i < size / 2; i++) {
-            temp = temp.address;
+            temp = temp.next;
         }
-        node.address = temp;
+        node.next = temp;
 
         size++;
     }
@@ -214,16 +213,16 @@ public class Linkedlist {
         ListNode fast = head;
         int count = 0;
 
-        while (fast != null && fast.address != null) {
-            slow = slow.address;
-            fast = fast.address.address;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
 
             if (slow == fast) {
                 count = 1;
-                slow = slow.address;
+                slow = slow.next;
 
                 while (slow != fast) {
-                    slow = slow.address;
+                    slow = slow.next;
                     count++;
                 }
                 break;
@@ -239,12 +238,12 @@ public class Linkedlist {
         ListNode slow = head;
         ListNode fast = head;
 
-        while (fast != null && fast.address != null) {
+        while (fast != null && fast.next != null) {
             count++;
-            slow = slow.address;
-            fast = fast.address.address;
+            slow = slow.next;
+            fast = fast.next.next;
         }
-        if (fast == null || fast.address == null) {
+        if (fast == null || fast.next == null) {
             System.out.println("the middle is -> " + slow.data);
         }
         return count;
@@ -267,22 +266,22 @@ public class Linkedlist {
             if (first.data > second.data) {
                 // at start
                 if (first == head) {
-                    first.address = second.address;
-                    second.address = first;
+                    first.next = second.next;
+                    second.next = first;
                     head = second;
                 }
                 // at end
                 else if (second == tail) {
-                    previous.address = second;
-                    second.address = first;
-                    first.address = null;
+                    previous.next = second;
+                    second.next = first;
+                    first.next = null;
                     tail = first;
                 }
                 // at mid
                 else {
-                    previous.address = second;
-                    first.address = second.address;
-                    second.address = first;
+                    previous.next = second;
+                    first.next = second.next;
+                    second.next = first;
                 }
             }
             BubbleSort(row, col + 1);
@@ -294,7 +293,7 @@ public class Linkedlist {
     public ListNode get(int i) {
         ListNode temp = head;
         for (int j = 0; j < i; j++) {
-            temp = temp.address;
+            temp = temp.next;
         }
         return temp;
     }
@@ -309,9 +308,9 @@ public class Linkedlist {
             head = node;
             return;
         }
-        Reverse(node.address);
-        tail.address = node;
-        node.address = null;
+        Reverse(node.next);
+        tail.next = node;
+        node.next = null;
         tail = node;
     }
 
@@ -322,14 +321,14 @@ public class Linkedlist {
         }
         ListNode previous = null;
         ListNode current = head;
-        ListNode next = current.address;
+        ListNode next = current.next;
 
         while (current != null) {
-            current.address = previous;
+            current.next = previous;
             previous = current;
             current = next;
             if (next != null) {
-                next = next.address;
+                next = next.next;
             }
         }
 //        head = previous;
@@ -346,30 +345,30 @@ public class Linkedlist {
 
         for (int i = 0; i < left - 1 && current != null; i++) {
             previous = current;
-            current = current.address;
+            current = current.next;
         }
         ListNode last_pointer_from_start = previous;
         ListNode left_Start = current;
 
-        ListNode next = current.address;
+        ListNode next = current.next;
 
         for (int i = 0; i < right - left + 1 && current != null; i++) {
-            current.address = previous;
+            current.next = previous;
             previous = current;
             current = next;
             if (next != null) {
-                next = next.address;
+                next = next.next;
             }
         }
         if (last_pointer_from_start == null) {
             head = previous;
         } else {
-            last_pointer_from_start.address = previous;
+            last_pointer_from_start.next = previous;
         }
         if (current != null) {
-            left_Start.address = current;
+            left_Start.next = current;
         } else {
-            left_Start.address = null;
+            left_Start.next = null;
         }
     }
 
@@ -381,31 +380,31 @@ public class Linkedlist {
 
         for (int i = 0; i < left - 1; i++) {
             prev = node;
-            node = node.address;
+            node = node.next;
         }
         // reverse it````````
         ListNode start_conn = prev;
         ListNode end_conn = node;
 
-        ListNode temp = node.address;
+        ListNode temp = node.next;
         for (int i = 0; i < right - left + 1; i++) {
 
-            node.address = prev;
+            node.next = prev;
             prev = node;
             node = temp;
-            if (temp != null) temp = temp.address;
+            if (temp != null) temp = temp.next;
         }
 
         if (start_conn != null) {
-            start_conn.address = prev;
+            start_conn.next = prev;
         }else {
             head = prev;
         }
 
         if (node != null) {
-            end_conn.address = node;
+            end_conn.next = node;
         }else {
-            end_conn.address = null;
+            end_conn.next = null;
         }
 
         return head;
@@ -417,13 +416,13 @@ public class Linkedlist {
         ListNode slow = head;
         ListNode fast = head;
 
-        while (fast != null && fast.address != null) {
+        while (fast != null && fast.next != null) {
             previous = slow;
-            slow = slow.address;
-            fast = fast.address.address;
+            slow = slow.next;
+            fast = fast.next.next;
         }
         ListNode last = ReverseForMid_Helper(slow);
-        previous.address = last;
+        previous.next = last;
 
         return last;
     }
@@ -431,14 +430,14 @@ public class Linkedlist {
     private ListNode ReverseForMid_Helper(ListNode slow) {
         ListNode prev = null;
         ListNode current = slow;
-        ListNode next = slow.address;
+        ListNode next = slow.next;
 
         while (current != null) {
-            current.address = prev;
+            current.next = prev;
             prev = current;
             current = next;
             if (next != null) {
-                next = next.address;
+                next = next.next;
             }
         }
         return prev;
@@ -453,14 +452,14 @@ public class Linkedlist {
         ListNode mid = head;
 
         for (int i = 0; i < mid_idx; i++) {
-            mid = mid.address;
+            mid = mid.next;
         }
 
         int p = 0;
         while (p != mid_idx) {
             if (first.data == mid.data) {
-                first = first.address;
-                mid = mid.address;
+                first = first.next;
+                mid = mid.next;
                 p++;
             } else {
                 return false;
@@ -477,16 +476,16 @@ public class Linkedlist {
         ListNode Head_first = head;
         ListNode Head_second = ReverseMid2(mid);
         while (Head_first != null && Head_second != null) {
-            ListNode temp = Head_first.address;
-            Head_first.address = Head_second;
+            ListNode temp = Head_first.next;
+            Head_first.next = Head_second;
             Head_first = temp;
 
-            temp = Head_second.address;
-            Head_second.address = Head_first;
+            temp = Head_second.next;
+            Head_second.next = Head_first;
             Head_second = temp;
         }
         if (Head_first != null) {
-            Head_first.address = null;
+            Head_first.next = null;
         }
     }
 
@@ -494,9 +493,9 @@ public class Linkedlist {
     private ListNode findMiddle2() {
         ListNode slow = head;
         ListNode fast = head;
-        while (fast != null && fast.address != null) {
-            slow = slow.address;
-            fast = fast.address.address;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
         }
         return slow; // This is the middle node
     }
@@ -506,8 +505,8 @@ public class Linkedlist {
         ListNode prev = null;
         ListNode current = middle;
         while (current != null) {
-            ListNode next = current.address; // Store next node
-            current.address = prev; // Reverse the link
+            ListNode next = current.next; // Store next node
+            current.next = prev; // Reverse the link
             prev = current; // Move prev to current
             current = next; // Move to next node
         }
@@ -526,25 +525,25 @@ public class Linkedlist {
         while(current != null){
             ListNode last_connector = previous;
             ListNode new_end  = current;
-            ListNode next = current.address;
+            ListNode next = current.next;
 
 
             for (int i = 0; i < k && current != null; i++) {
-                current.address = previous;
+                current.next = previous;
                 previous = current;
                 current = next;
                 if (next != null){
-                    next = next.address;
+                    next = next.next;
                 }
             }
 
             if (last_connector != null) {
-                last_connector.address = previous;
+                last_connector.next = previous;
             }
             else { // means that there is no last end connector
                 head = previous;
             }
-            new_end.address = current;
+            new_end.next = current;
 
             // update the previous
             previous = new_end;
@@ -562,81 +561,106 @@ public class Linkedlist {
         while (currrent != null){
             ListNode last_pointer = previous ;
             ListNode new_end = currrent;
-            ListNode next = currrent.address;
+            ListNode next = currrent.next;
 
             for (int i = 0; i < k && currrent != null; i++) {
-                currrent.address = previous;
+                currrent.next = previous;
                 previous = currrent;
                 currrent = next;
 
                 if (next != null){
-                    next = next.address;
+                    next = next.next;
                 }
             }
             if (last_pointer != null) {
-                last_pointer.address = previous;
+                last_pointer.next = previous;
             }
             else {
                 head = previous;
             }
-            new_end.address = currrent;
+            new_end.next = currrent;
 
             for (int i = 0; i < k && currrent != null; i++) {
                 previous = currrent;
                 currrent = next;
                 if (next != null) {
-                    next = next.address;
+                    next = next.next;
                 }
 
             }
         }
     }
 
-    // rotate the list K times
-    public void Rotate(int k) {
-        if (k == 0){
-            return;
+    public static void main(String[] args) {
+        Linkedlist linkedlist = new Linkedlist();
+        linkedlist.add(1);
+        linkedlist.add(2);
+        linkedlist.add(3);
+        linkedlist.add(4);
+        linkedlist.add(5);
+//        linkedlist.reverseBetween(1,2);
+        linkedlist.Reorder_by_K(2);
+        linkedlist.display();
+
+    }
+
+    public ListNode RotateLL(){
+        if(head == null || head.next == null){
+            return head;
         }
 
-        for (int i = 0; i < k; i++) {
+        ListNode prev = null;
+        ListNode curr = head;
+        ListNode fwd = curr.next;
 
-            ListNode previous = null;
-            ListNode temp = head;
-
-            while (temp.address != null) {
-                previous = temp;
-                temp = temp.address;
-            }
-            temp.address = head;
-            head = temp;
-            previous.address = null;
-
+        while (curr != null){
+            curr.next = prev;
+            prev = curr;
+            curr = fwd;
+            if (fwd != null ) fwd = fwd.next;
         }
-        }
-
-//        public ListNode rotateRight(ListNode head, int k) {
-//            if (k == 0 || head == null || head.next == null ){
-//                return head;
-//            }
-//
-//
-//            ListNode previous = null;
-//            ListNode temp = head;
-//
-//            while (temp.next != null) {
-//                previous = temp;
-//                temp = temp.next;
-//            }
-//            temp.next = head;
-//            head = temp;
-//            previous.next = null;
-//
-//            return rotateRight(head,k-1);
-//        }
+        head = prev;
+        return prev;
+    }
 
     }
 
 
-
-
+//{
+//
+//ListNode prev = null;
+//ListNode node = head;
+//
+//        for (int i = 0; i < left - 1; i++) {
+//prev = node;
+//node = node.next;
+//        }
+//// reverse it````````
+//ListNode start_conn = prev;
+//ListNode end_conn = node;
+//
+//ListNode temp = node.next;
+//        for (int i = 0; i < right - left + 1; i++) {
+//
+//node.next = prev;
+//prev = node;
+//node = temp;
+//            if (temp != null) temp = temp.next;
+//        }
+//
+//                if (start_conn != null) {
+//start_conn.next = prev;
+//        }else {
+//head = prev;
+//        }
+//
+//                if (node != null) {
+//end_conn.next = node;
+//        }else {
+//end_conn.next = null;
+//        }
+//
+//        return head;
+//    }
+//
 

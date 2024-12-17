@@ -1,8 +1,8 @@
 package Custom_Linked_List;
 
 public class Linkedlist {
-    private Node head;
-    private Node tail;
+    private ListNode head;
+    private ListNode tail;
     public int size;
 
    public Linkedlist(){
@@ -11,11 +11,11 @@ public class Linkedlist {
 
     // 1.  this constructor will add value always in first position
     public void addATfirst(int val){
-        Node node  = new Node(val);
+        ListNode listNode = new ListNode(val);
         // this is assigning the address to head
-        node.address = head;
+        listNode.next = head;
         // now in this head will point to first node
-        head = node;
+        head = listNode;
         // in this if first element is being added means there is no tail so assign tail to first node
         if (tail == null){
             tail = head;
@@ -25,11 +25,11 @@ public class Linkedlist {
 
     // 2.  displaying whole thing
     public void display(){
-       Node temp = head;
+       ListNode temp = head;
        while (temp != null){
            System.out.print(temp.val + " ->");
            // this address refrence is pointing to the next node
-           temp = temp.address;
+           temp = temp.next;
        }
         System.out.println("END");
     }
@@ -40,21 +40,21 @@ public class Linkedlist {
            addATfirst(val);
            return;
        }
-       Node node = new Node(val);
+       ListNode listNode = new ListNode(val);
        // in this the tail's (previous node address) now will point to new node
-       tail.address = node;
+       tail.next = listNode;
        // this will reassing the tail to new node
         // and after the method will over the node will remain int the scope of this function
         // and only remain is tail's new address
-       tail  =  node;
+       tail  = listNode;
        size++;
     }
 
     // for getting the specific index value
     public void access(int idx){
-        Node temp = head;
+        ListNode temp = head;
         while (idx != 0){
-            temp = temp.address;
+            temp = temp.next;
             idx--;
         }
         System.out.println(temp.val);
@@ -70,28 +70,28 @@ public class Linkedlist {
             return;
         }
 
-       Node temp = head;
+       ListNode temp = head;
         for (int i = 0; i < idx; i++) {
-            temp = temp.address;
+            temp = temp.next;
         }
-       Node node = new Node(val,temp.address);
-       temp.address = node;
+       ListNode listNode = new ListNode(val,temp.next);
+       temp.next = listNode;
        size++;
     }
 
              // deleting part's
     public void deleteStart(){
-       head = head.address;
+       head = head.next;
        size--;
     }
 
     public void deleteEnd(){
-       Node temp = head;
+       ListNode temp = head;
        // by this i am able to delete as many elements from the last
         for (int i = 1; i < size; i++) {
-            temp = temp.address;
+            temp = temp.next;
         }
-        temp.address = null;
+        temp.next = null;
         tail = temp;
         size--;
     }
@@ -108,67 +108,132 @@ public class Linkedlist {
        }
 
 
-        Node temp = head;
+        ListNode temp = head;
         for (int i = 1; i < idx; i++) {
-            temp = temp.address;
+            temp = temp.next;
         }
-         Node prev = temp;
-        prev.address  = temp.address.address;
+         ListNode prev = temp;
+        prev.next = temp.next.next;
         size--;
     }
 
 
                                     // node class
-    private class Node {
+    private class ListNode {
         private int val;
-        private Node address;
+        private ListNode next;
 
-    public Node(){
+    public ListNode(){
 
     }
 
 
-      public Node(Node address){
-        this.address = address;
+      public ListNode(ListNode next){
+        this.next = next;
       }
-      public Node(int val){
+      public ListNode(int val){
             this.val = val;
         }
 
-    public Node(int val, Node address) {
+    public ListNode(int val, ListNode next) {
         this.val = val;
-        this.address = address;
+        this.next = next;
     }
 }
+
+
+public ListNode FindMid(){
+    ListNode slow = head;
+    ListNode fast = slow.next;
+
+    while (fast != null && fast.next != null){
+        slow = slow.next;
+        fast = fast.next.next;
+    }
+
+    System.out.println(slow.val);
+    return slow;
 }
 
+    public int findLengthOfLL(){
+        ListNode temp = head;
+        int count = 0;
+        while (temp != null){
+            count++;
+            temp = temp.next;
+        }
+        System.out.println(count);
+        return count;
+    }
 
-class callLL{
     public static void main(String[] args) {
         Linkedlist list1 = new Linkedlist();
-        list1.add(11);
-        list1.add(123);
-        list1.add(99);
-        list1.add(22);
-        list1.add(8);
-//        list1.deleteStart();
-//        list1.addMid(1,7);
-        list1.addMid(3,7);
-//        list1.addMid(1,7);
-
-
+        list1.add(1);
+        list1.add(2);
+        list1.add(3);
+        list1.add(4);
+        list1.add(5);
 
         list1.display();
-        System.out.println();
-////        list1.deleteEnd(4);
-//        list1.deleteAnywher(0);
-//        list1.deleteAnywher(1);
-//        list1.deleteAnywher(2);
-//        list1.deleteAnywher(3);
-//        list1.deleteAnywher(4 );
+        int i = 2;
+//      while (i <= 4){
+//          i = i+2;
+//            list1.reverseBetween(i);
+//            list1.display();
+//        }
+        list1.reverseBetween_2();
         list1.display();
-
-//        System.out.println(list1.size);
-//        list1.access(2);
     }
+
+    // reverse between
+    public ListNode reverseBetween(int k){
+       if (k <= 1 || k > 5){
+           return head;
+       }
+        ListNode temp = head;
+        ListNode connector = temp;
+       while (k > 1){
+           temp = temp.next;
+           k--;
+           if (k == 2) connector = temp;
+       }
+
+        ListNode prev = null;
+        ListNode curr = temp;
+        ListNode fwd = curr.next;
+
+       while (curr != null ){
+           curr.next = prev;
+           prev = curr;
+           curr = fwd;
+           if (fwd != null) fwd = fwd.next;
+       }
+       connector.next = prev;
+       return head;
+    }
+
+
+    public void reverseBetween_2(){
+
+       ListNode prev = null;
+       ListNode curr = head;
+       ListNode fwd = curr.next;
+       int i = 2;
+       // do it two times
+        while (curr != null && i != 0){
+            curr.next = prev;
+            prev = curr;
+            curr = fwd;
+            if (fwd != null) fwd = fwd.next;
+            i--;
+        }
+        head = prev;
+        prev.next = fwd;
+
+    }
+
+
+
+
+
 }

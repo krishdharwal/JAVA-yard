@@ -9,7 +9,7 @@ public class Rotate_LL {
         }
 
         list.display();
-        list.Rotate(1);
+//        list.Rotate(1);
         list.display();
     }
 }

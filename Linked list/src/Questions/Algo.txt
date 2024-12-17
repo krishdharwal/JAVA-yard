@@ -63,14 +63,14 @@
     public void MakeCycle(int data){
         Node temp = head;
 
-       Node node = new Node(data);
-       tail.address = node;
-       tail = node;
+       Node listNode = new Node(data);
+       tail.address = listNode;
+       tail = listNode;
 
         for (int i = 0; i < size / 2; i++) {
             temp = temp.address;
         }
-        node.address = temp;
+        listNode.address = temp;
 
        size++;
     }
