@@ -9,67 +9,56 @@ package Questions;
       ListNode(int val, ListNode next) { this.val = val; this.next = next; }
   }
 
-  int forHeadShiftCount = 1;
+          public ListNode reverseKGroup(ListNode head, int k) {
 
-    public ListNode reverseKGroup(ListNode head, int k) {
-        // check for multiplicator or not
-        int length = findLengthOfLL(head);
-        if (length % k == 0) return head;
+              if (k <= 1 && head == null) {
+                  return head;
+              }
+              ListNode previous = null;
+              ListNode current = head;
 
-        int endPoint = length % k;
-        return reverseLlFromK(head,k,endPoint);
-    }
+              // this used for to iterate only this times
+              int iterator = findLengthOfLL(head) / k;
+
+              while(current != null && iterator > 0){
+                  ListNode last_connector = previous;
+                  ListNode new_end = current;
+                  ListNode next = current.next;
 
 
-    public ListNode reverseLlFromK(ListNode head , int k, int end){
-        {
+                  for (int i = 0; i < k && current != null; i++) {
+                      current.next = previous;
+                      previous = current;
+                      current = next;
+                      if (next != null){
+                          next = next.next;
+                      }
+                  }
 
-            ListNode prev = null;
-            ListNode node = head;
+                  iterator--;
 
-            for (int i = 0; i < end - 1; i++) {
-                prev = node;
-                node = node.next;
-            }
-            // reverse it````````
-            ListNode start_conn = prev;
-            ListNode end_conn = node;
+                  if (last_connector != null) {
+                      last_connector.next = previous;
+                  }
+                  else { // means that there is no last end connector
+                      head = previous;
+                  }
+                  new_end.next = current;
 
-            ListNode temp = node.next;
-            for (int i = 0; i < k; i++) {
-                node.next = prev;
-                prev = node;
-                node = temp;
-                if (temp != null) temp = temp.next;
-            }
+                  // update the previous
+                  previous = new_end;
+              }
+              return head;
+          }
 
-            if (start_conn != null) {
-                start_conn.next = prev;
-            }else {
-                head = prev;
-            }
-
-            if (node != null) {
-                end_conn.next = node;
-            }else {
-                end_conn.next = null;
-            }
-
-            return head;
-        }
-    }
-
-    public int findLengthOfLL(ListNode start){
-        ListNode temp = start;
-        int count = 0;
-        while (temp != null){
-            count++;
-            temp = temp.next;
-        }
-        return count;
-    }
-
-      public static void main(String[] args) {
-
+          public int findLengthOfLL(ListNode start){
+              ListNode temp = start;
+              int count = 0;
+              while (temp != null){
+                  count++;
+                  temp = temp.next;
+              }
+              return count;
+          }
       }
   }
