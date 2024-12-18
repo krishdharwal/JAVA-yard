@@ -140,9 +140,54 @@ public class Linkedlist {
         this.next = next;
     }
 }
+    // reverse between
+    public ListNode reverseBetween(int k){
+        if (k <= 1 || k > 5){
+            return head;
+        }
+        ListNode temp = head;
+        ListNode connector = temp;
+        while (k > 1){
+            temp = temp.next;
+            k--;
+            if (k == 2) connector = temp;
+        }
+
+        ListNode prev = null;
+        ListNode curr = temp;
+        ListNode fwd = curr.next;
+
+        while (curr != null ){
+            curr.next = prev;
+            prev = curr;
+            curr = fwd;
+            if (fwd != null) fwd = fwd.next;
+        }
+        connector.next = prev;
+        return head;
+    }
 
 
-public ListNode FindMid(){
+    public void reverseBetween_2(){
+
+        ListNode prev = null;
+        ListNode curr = head;
+        ListNode fwd = curr.next;
+        int i = 2;
+        // do it two times
+        while (curr != null && i != 0){
+            curr.next = prev;
+            prev = curr;
+            curr = fwd;
+            if (fwd != null) fwd = fwd.next;
+            i--;
+        }
+        head = prev;
+        prev.next = fwd;
+
+    }
+
+    public ListNode FindMid(){
     ListNode slow = head;
     ListNode fast = slow.next;
 
@@ -167,73 +212,24 @@ public ListNode FindMid(){
     }
 
     public static void main(String[] args) {
+       Linkedlist[] list = new Linkedlist[2];
+
         Linkedlist list1 = new Linkedlist();
         list1.add(1);
-        list1.add(2);
-        list1.add(3);
         list1.add(4);
         list1.add(5);
 
-        list1.display();
-        int i = 2;
-//      while (i <= 4){
-//          i = i+2;
-//            list1.reverseBetween(i);
-//            list1.display();
-//        }
-        list1.reverseBetween_2();
-        list1.display();
-    }
 
-    // reverse between
-    public ListNode reverseBetween(int k){
-       if (k <= 1 || k > 5){
-           return head;
-       }
-        ListNode temp = head;
-        ListNode connector = temp;
-       while (k > 1){
-           temp = temp.next;
-           k--;
-           if (k == 2) connector = temp;
-       }
+        Linkedlist list2 = new Linkedlist();
+        list2.add(1);
+        list2.add(3);
+        list2.add(4);
 
-        ListNode prev = null;
-        ListNode curr = temp;
-        ListNode fwd = curr.next;
+        list[0] = list1;
+        list[1] = list2;
 
-       while (curr != null ){
-           curr.next = prev;
-           prev = curr;
-           curr = fwd;
-           if (fwd != null) fwd = fwd.next;
-       }
-       connector.next = prev;
-       return head;
-    }
-
-
-    public void reverseBetween_2(){
-
-       ListNode prev = null;
-       ListNode curr = head;
-       ListNode fwd = curr.next;
-       int i = 2;
-       // do it two times
-        while (curr != null && i != 0){
-            curr.next = prev;
-            prev = curr;
-            curr = fwd;
-            if (fwd != null) fwd = fwd.next;
-            i--;
-        }
-        head = prev;
-        prev.next = fwd;
 
     }
-
-
-
 
 
 }

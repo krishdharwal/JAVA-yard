@@ -1,6 +1,8 @@
 package Questions;
 
 
+import java.util.List;
+
 public class Linkedlist {
 
     public ListNode head;
@@ -33,7 +35,7 @@ public class Linkedlist {
     public void display() {
         ListNode temp = head;
         while (temp != null) {
-            System.out.print(temp.data + " ->");
+            System.out.print(temp.val + " ->");
             // this address refrence is pointing to the next node
             temp = temp.next;
         }
@@ -63,7 +65,7 @@ public class Linkedlist {
             temp = temp.next;
             idx--;
         }
-        System.out.println(temp.data);
+        System.out.println(temp.val);
     }
 
     public void addMid(int idx, int val) {
@@ -126,7 +128,7 @@ public class Linkedlist {
     // node class
 
     public class ListNode {
-        public int data;
+        public int val;
         public ListNode next;
 
         public ListNode() {
@@ -138,11 +140,11 @@ public class Linkedlist {
         }
 
         public ListNode(int val) {
-            this.data = val;
+            this.val = val;
         }
 
         public ListNode(int val, ListNode address) {
-            this.data = val;
+            this.val = val;
             this.next = address;
         }
     }
@@ -156,22 +158,22 @@ public class Linkedlist {
         Linkedlist joined = new Linkedlist();
 
         while (f != null && s != null) {
-            if (f.data < s.data) {
-                joined.add(f.data);
+            if (f.val < s.val) {
+                joined.add(f.val);
                 f = f.next;
             } else {
-                joined.add(s.data);
+                joined.add(s.val);
                 s = s.next;
             }
         }
 
         // if some left over
         while (f != null) {
-            joined.add(f.data);
+            joined.add(f.val);
             f = f.next;
         }
         while (s != null) {
-            joined.add(s.data);
+            joined.add(s.val);
             s = s.next;
         }
 
@@ -244,7 +246,7 @@ public class Linkedlist {
             fast = fast.next.next;
         }
         if (fast == null || fast.next == null) {
-            System.out.println("the middle is -> " + slow.data);
+            System.out.println("the middle is -> " + slow.val);
         }
         return count;
     }
@@ -263,7 +265,7 @@ public class Linkedlist {
             ListNode second = get(col + 1);
             ListNode previous = get(col - 1);
 
-            if (first.data > second.data) {
+            if (first.val > second.val) {
                 // at start
                 if (first == head) {
                     first.next = second.next;
@@ -457,7 +459,7 @@ public class Linkedlist {
 
         int p = 0;
         while (p != mid_idx) {
-            if (first.data == mid.data) {
+            if (first.val == mid.val) {
                 first = first.next;
                 mid = mid.next;
                 p++;
@@ -592,15 +594,30 @@ public class Linkedlist {
     }
 
     public static void main(String[] args) {
-        Linkedlist linkedlist = new Linkedlist();
-        linkedlist.add(1);
-        linkedlist.add(2);
-        linkedlist.add(3);
-        linkedlist.add(4);
-        linkedlist.add(5);
-//        linkedlist.reverseBetween(1,2);
-        linkedlist.Reorder_by_K(2);
-        linkedlist.display();
+        Linkedlist linkedlist_1 = new Linkedlist();
+        linkedlist_1.add(1);
+        linkedlist_1.add(4);
+        linkedlist_1.add(5);
+
+        linkedlist_1.display();
+
+        Linkedlist linkedlist_2 = new Linkedlist();
+        linkedlist_2.add(1);
+        linkedlist_2.add(3);
+        linkedlist_2.add(4);
+
+        linkedlist_2.display();
+
+        ListNode[] arr = new ListNode[2];
+        arr[0] = linkedlist_1.head;
+        arr[1] = linkedlist_2.head;
+
+        ListNode temp = mergeKLists(arr);
+
+      while (temp != null) {
+          System.out.print(temp.val + " -> ");
+          temp = temp.next;
+      }
 
     }
 
@@ -623,5 +640,45 @@ public class Linkedlist {
         return prev;
     }
 
+
+
+    public static ListNode mergeKLists(ListNode[] lists) {
+        if (lists.length <= 1){
+//            return new ListNode();
+        }
+        int length = lists.length;
+        // "i" will traverse to all linked list starting node in array
+        int i = 1;
+        ListNode header = lists[0];
+        // temp will point to first linked list
+        ListNode mainLL = header;
+        while (i < length){
+
+            ListNode secLL = lists[i];
+            while (secLL != null){
+                if (mainLL.next != null && secLL.val > mainLL.next.val){
+                    mainLL = mainLL.next;
+                }else {
+                    // make next pointer reference
+                    ListNode fwdOfSec = null;
+                    if (secLL.next != null) {
+                        fwdOfSec = secLL.next;
+                    }
+                    secLL.next =  mainLL.next;
+                    mainLL.next = secLL;
+                    // increment it
+//                    mainLL = secLL;
+                    secLL = fwdOfSec;
+                }
+            }
+            i++;
+            mainLL = header;
+        }
+        return header;
     }
+
+
+
+
+}
 
