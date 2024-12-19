@@ -610,14 +610,8 @@ public class Linkedlist {
 
         ListNode[] arr = new ListNode[2];
         arr[0] = linkedlist_1.head;
-        arr[1] = linkedlist_2.head;
 
-        ListNode temp = mergeKLists(arr);
 
-      while (temp != null) {
-          System.out.print(temp.val + " -> ");
-          temp = temp.next;
-      }
 
     }
 
@@ -641,20 +635,32 @@ public class Linkedlist {
     }
 
 
-
-    public static ListNode mergeKLists(ListNode[] lists) {
-        if (lists.length <= 1){
-//            return new ListNode();
+    public ListNode mergeKLists(ListNode[] lists) {
+        if (lists == null || lists.length <= 0){
+            return null;
+        }
+        int i = 0;
+        while(lists[i] == null && lists.length <=1){
+            return null;
         }
         int length = lists.length;
         // "i" will traverse to all linked list starting node in array
-        int i = 1;
-        ListNode header = lists[0];
-        // temp will point to first linked list
-        ListNode mainLL = header;
-        while (i < length){
 
-            ListNode secLL = lists[i];
+        ListNode header = lists[i];
+        int k = i;
+        if (i < length-1) {
+             k = i + 1;
+        }
+        // temp will point to first linked list
+        while(header == null){
+            header = lists[k];
+            k++;
+        }
+        ListNode mainLL = header;
+
+        while (k < length){
+
+            ListNode secLL = lists[k];
             while (secLL != null){
                 if (mainLL.next != null && secLL.val > mainLL.next.val){
                     mainLL = mainLL.next;
@@ -671,13 +677,11 @@ public class Linkedlist {
                     secLL = fwdOfSec;
                 }
             }
-            i++;
+            k++;
             mainLL = header;
         }
         return header;
     }
-
-
 
 
 }
