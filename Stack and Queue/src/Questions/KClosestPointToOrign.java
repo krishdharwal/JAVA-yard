@@ -12,7 +12,30 @@ public class KClosestPointToOrign {
         System.out.println(Arrays.deepToString(kClosest(new int[][]{{0,1},{1,0}},2)));
     }
 
-    public static int[][] kClosest(int[][] points, int k) {
+        public static int[][] kClosest(int[][] points, int k) {
+            PriorityQueue<int[]> queue = new PriorityQueue<>((a, b) ->
+                    Integer.compare(a[0], b[0]));
+
+            for (int i = 0; i < points.length; i++) {
+                int x = points[i][0];
+                int y = points[i][1];
+                int dist = x * x + y * y;
+                queue.offer(new int[]{dist, i});
+            }
+
+            int[][] result = new int[k][2];
+            for (int i = 0; i < k; i++) {
+                int[] closest = queue.poll();
+                result[i] = points[closest[1]];
+            }
+
+            return result;
+        }
+
+
+    // failed for this test case cause i am using square root
+//     System.out.println(Arrays.deepToString(kClosest(new int[][]{{0,1},{1,0}},2)));
+    public static int[][] kClosest2(int[][] points, int k) {
         int[][] arr = new int[k][2];
         Map<Integer,Integer> map = new HashMap<>();
         PriorityQueue<Integer> queue = new PriorityQueue<>();
@@ -25,11 +48,7 @@ public class KClosestPointToOrign {
                 sqrt += ele * ele;
             }
             queue.offer(sqrt);
-            if(!map.isEmpty() && map.containsKey(sqrt)){
-                map.put(sqrt+1, idx);
-            }else {
-                map.put(sqrt, idx);
-            }
+            map.put(sqrt, idx);
             idx++;
         }
 //        System.out.println(queue + "\n" + map);
