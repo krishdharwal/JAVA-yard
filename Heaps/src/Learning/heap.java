@@ -1,3 +1,4 @@
+package Learning;
 
 import java.util.ArrayList;
 
@@ -20,7 +21,7 @@ public class heap  {
         return idx * 2 + 2;
     }
 
-     // adding elements as per heap large small criteria or index criteria
+     // adding elements as per Learning.heap large small criteria or index criteria
     private void add(int data){
         list.add(data);
         upheap(list.size()-1);
@@ -104,7 +105,7 @@ public class heap  {
                       // ----------HEAP SORT------------
 
 
-    // IN heap sort , display the elements in left right order
+    // IN Learning.heap sort , display the elements in left right order
     private void HeapSort(){
         ArrayList<Integer> list2 = new ArrayList<>();
         while (!list.isEmpty()) {
@@ -118,7 +119,7 @@ public class heap  {
 
 
 
-    // Max HEap -> in this the child of the parent's are smaller or equal to the parent
+    // Max HEap -> checking in this that the child of the parents are smaller or equal to the parent
     // PARENT >= CHILD
 
     private void Max_Heap(){
