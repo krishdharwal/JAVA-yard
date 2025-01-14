@@ -1,6 +1,8 @@
 package Questions;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 
 public class populateToNext {
@@ -34,5 +36,16 @@ public class populateToNext {
 
         return root;
 
+    }
+
+
+    public static void main(String[] args) {
+        List<Integer> list = new ArrayList<>();
+        for (int i = 0; i < 5; i++) {
+            list.add(0,i);
+
+        }
+
+        System.out.println(list);
     }
 }
