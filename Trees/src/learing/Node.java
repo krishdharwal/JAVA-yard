@@ -2,9 +2,9 @@ package learing;
 
 import java.util.Scanner;
 
-public class Custom_Tree {
-    private Node root;
-    public Custom_Tree(){
+public class Node {
+    public Node root;
+    public Node(){
     }
 
     public void add(Scanner in){
@@ -98,7 +98,7 @@ public class Custom_Tree {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 
-        Custom_Tree tree = new Custom_Tree();
+        learing.Node tree = new learing.Node();
         tree.add(in);
         tree.Tree_form_display();
     }

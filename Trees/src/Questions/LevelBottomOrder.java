@@ -7,12 +7,12 @@ public class LevelBottomOrder {
 
     // big brain moment
     // just traverse in normal level order but reverse the ans list of list at last
-    public List<List<Integer>> levelOrderBottom(TreeNode root) {
+    public List<List<Integer>> levelOrderBottom(Custom_Tree root) {
         List<List<Integer>> ans = new ArrayList<>();
         if(root == null){
             return ans;
         }
-        Queue<TreeNode> queue = new LinkedList<>();
+        Queue<Custom_Tree> queue = new LinkedList<>();
         queue.add(root);
 
         while(!queue.isEmpty()){
@@ -20,7 +20,7 @@ public class LevelBottomOrder {
             List<Integer> list = new ArrayList<>();
 
             for(int i=0; i<level; i++){
-                TreeNode temp = queue.poll();
+                Custom_Tree temp = queue.poll();
                 list.add(temp.val);
 
                 if(temp.left != null) queue.add(temp.left);
