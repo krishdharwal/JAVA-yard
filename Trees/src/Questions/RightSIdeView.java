@@ -3,30 +3,30 @@ package Questions;
 import java.util.*;
 
 public class RightSIdeView {
-    public List<Integer> rightSideView(Custom_Tree root) {
+    public List<Integer> rightSideView(Node root) {
         List<Integer> list = new ArrayList<>();
         if(root == null){
             return list;
         }
 
-        Queue<Custom_Tree> queue = new LinkedList<>();
+        Queue<Node> queue = new LinkedList<>();
         queue.add(root);
         // list.add(root.val);
 
         while(!queue.isEmpty()){
 
-            Custom_Tree last = queue.peek();
+            Node last = queue.peek();
             int level = queue.size();
 
             for(int i=0; i<level; i++){
-                Custom_Tree temp = queue.poll();
+                Node temp = queue.poll();
                 last = temp;
                 if(temp.left != null) queue.add(temp.left);
                 if(temp.right != null) queue.add(temp.right);
 
             }
 
-            list.add(last.val);
+            list.add(last.data);
 
 
         }

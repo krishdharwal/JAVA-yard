@@ -1,6 +1,8 @@
 package learing;
 // self balancing tree
 
+import Questions.Node;
+
 public class AVL_tree {
     private Node root;
     public AVL_tree(){}
@@ -119,11 +121,11 @@ public class AVL_tree {
         return c;
     }
 
-     private class Node{
-         private Node left;
-         private Node right;
-         private int data;
-        private int height;
+      class Node{
+          Node left;
+          Node right;
+          int data;
+         int height;
 
          public Node(int data){
              this.data = data;
@@ -134,12 +136,13 @@ public class AVL_tree {
                                      // call
     public static void main(String[] args) {
         AVL_tree tree = new AVL_tree();
-        for (int i = 1; i <= 20; i++) {
+        for (int i = 1; i <= 10; i++) {
             tree.insert(i);
 
         }
         System.out.println(tree.height());
-//        tree.good_Display();
+        tree.good_Display();
+        System.out.println(tree.heightTraverse());
     }
 
 
@@ -170,5 +173,22 @@ public class AVL_tree {
         good_Display(node.left,level+1);
 
     }
+
+
+    public int heightTraverse(){
+        return heightTraverse(root,0,0);
+    }
+
+    private int heightTraverse(Node node, int mh , int h) {
+        if (node == null){
+            return h-1;
+        }
+
+        mh = Math.max(heightTraverse(node.left,mh,h+1) , mh);
+        mh = Math.max(heightTraverse(node.right,mh,h+1), mh);
+
+        return mh;
+    }
+
 
 }
