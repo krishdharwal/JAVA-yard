@@ -133,17 +133,6 @@ public class AVL_tree {
          public Node(){}
      }
 
-                                     // call
-    public static void main(String[] args) {
-        AVL_tree tree = new AVL_tree();
-        for (int i = 1; i <= 10; i++) {
-            tree.insert(i);
-
-        }
-        System.out.println(tree.height());
-        tree.good_Display();
-        System.out.println(tree.heightTraverse());
-    }
 
 
 
@@ -176,19 +165,51 @@ public class AVL_tree {
 
 
     public int heightTraverse(){
-        return heightTraverse(root,0,0);
+        return heightTraverse(root);
     }
 
-    private int heightTraverse(Node node, int mh , int h) {
-        if (node == null){
-            return h-1;
+    private int heightTraverse(Node node) {
+      if (node == null) return -1;
+
+      int lh = heightTraverse(node.left);
+      int rh = heightTraverse(node.right);
+
+      return Math.max(lh,rh)+1;
+    }
+
+    public int diameterOfBinaryTree() {
+
+         diameterOfBinaryTree(root);
+         return dim;
+
+    }
+
+    int dim = 0;
+    int diameterOfBinaryTree(Node node){
+        if(node == null) return 0;
+
+        int lh = diameterOfBinaryTree(node.left);
+        int rh = diameterOfBinaryTree(node.right);
+
+        int mh = lh + rh + 1;
+        dim = Math.max(dim,mh);
+
+
+        return Math.max(lh,rh)+1;
+    }
+
+
+    // call
+    public static void main(String[] args) {
+        AVL_tree tree = new AVL_tree();
+        for (int i = 1; i <= 10; i++) {
+            tree.insert(i);
+
         }
-
-        mh = Math.max(heightTraverse(node.left,mh,h+1) , mh);
-        mh = Math.max(heightTraverse(node.right,mh,h+1), mh);
-
-        return mh;
+//        System.out.println(tree.height());
+        tree.good_Display();
+        System.out.println( "height " + tree.heightTraverse());
+        System.out.println( "diameter" + tree.diameterOfBinaryTree());
     }
-
 
 }
