@@ -5,6 +5,8 @@ import Questions.TreeNode;
 import java.util.LinkedList;
 import java.util.Queue;
 
+
+// using Level order traversal
 public class InvertTree {
     public TreeNode invertTree(TreeNode root) {
         if(root == null){
