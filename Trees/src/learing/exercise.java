@@ -1,8 +1,6 @@
 package learing;
 
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.TreeSet;
+import java.util.*;
 
 public class exercise {
     public int data;
@@ -24,7 +22,9 @@ public class exercise {
     }
 
     public int print(int data,String s){
-       return this.print(12);
+        List<Integer> list = new ArrayList<>(4);
+
+        return ((list.isEmpty()) ? 12 : 2);
     }
 
     public static void main(String[] args) {
@@ -38,6 +38,9 @@ public class exercise {
 //        System.out.println(tree);
 
         Queue<Integer> q = new LinkedList<>();
+
+        List<Integer> list = new ArrayList<>(4);
+        System.out.println(list);
 
 
     }

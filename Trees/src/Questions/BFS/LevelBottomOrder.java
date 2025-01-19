@@ -1,4 +1,6 @@
-package Questions;
+package Questions.BFS;
+
+import Questions.Node;
 
 import java.util.*;
 

@@ -1,4 +1,6 @@
-package Questions;
+package Questions.BFS;
+
+import Questions.TreeNode;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

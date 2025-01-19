@@ -128,10 +128,7 @@ public class Binary_tree {
         display_Pre_Order(node.left);
         display_Pre_Order(node.right);
     }
-
-
-
-
+    
     // Post order traversal ->  L R N
     private void display_Post_Order() {
         display_Post_Order(this.root);

@@ -1,5 +1,7 @@
-package Questions;
+package learing;
 // binary tree
+
+import Questions.Node;
 
 public class Tree {
 
