@@ -28,7 +28,7 @@ public class RightSIdeView {
 
             }
 
-            list.add(last.data);
+            list.add(last.val);
 
 
         }

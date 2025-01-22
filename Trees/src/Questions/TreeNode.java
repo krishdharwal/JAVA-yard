@@ -7,7 +7,7 @@ public class TreeNode {
     public TreeNode next;
 
     TreeNode(){}
-    TreeNode(int val){
+    public TreeNode(int val){
         this.val = val;
     }
 }

@@ -4,7 +4,7 @@ package learing;
 import Questions.Node;
 
 public class AVL_tree {
-    private Node root;
+    public Node root;
     public AVL_tree(){}
 
                                // height
@@ -121,11 +121,11 @@ public class AVL_tree {
         return c;
     }
 
-      class Node{
-          Node left;
-          Node right;
-          int data;
-         int height;
+    public class Node{
+        public   Node left;
+        public   Node right;
+        public   int data;
+        public   int height;
 
          public Node(int data){
              this.data = data;

@@ -19,11 +19,11 @@ public class Tree {
             return node;
         }
 
-        if (data < node.data) {
+        if (data < node.val) {
            node.left =  add(node.left, data);
         }
 
-        if (data > node.data) {
+        if (data > node.val) {
            node.right = add(node.right, data);
         }
 
@@ -43,7 +43,7 @@ public class Tree {
         if (node == null){
             return;
         }
-        System.out.print(node.data + " - ");
+        System.out.print(node.val + " - ");
 
         display(node.left);
         display(node.right);
