@@ -32,13 +32,19 @@ public class exercise {
 //
 //        String[] str = j.split(",");
 //        System.out.println(Arrays.toString(str));
-        List<String> list = new ArrayList<>(Arrays.asList(j.split(",")));
-        list.add("a");
-        list.add("b");
-        System.out.println(list);
+//        List<String> list = new ArrayList<>(Arrays.asList(j.split(",")));
+//        list.add("a");
+//        list.add("b");
+//        System.out.println(list);
+//
+//        list.removeFirst();
+//        System.out.println(list.get(0));
 
-        list.removeFirst();
-        System.out.println(list.get(0));
+        // to add number without adding
+        int num = 128;
+//        System.out.println(num * 10 + 8);
+
+        System.out.println(num / 10);
 
     }
 }

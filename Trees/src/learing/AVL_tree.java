@@ -1,7 +1,7 @@
 package learing;
 // self balancing tree
 
-import Questions.Node;
+import Questions.TreeNode;
 
 public class AVL_tree {
     public Node root;
@@ -198,18 +198,25 @@ public class AVL_tree {
         return Math.max(lh,rh)+1;
     }
 
+    
+
+
 
     // call
     public static void main(String[] args) {
         AVL_tree tree = new AVL_tree();
-        for (int i = 1; i <= 10; i++) {
+        for (int i = 1; i <= 5; i++) {
             tree.insert(i);
 
         }
 //        System.out.println(tree.height());
         tree.good_Display();
-        System.out.println( "height " + tree.heightTraverse());
-        System.out.println( "diameter" + tree.diameterOfBinaryTree());
+//        System.out.println( "height " + tree.heightTraverse());
+//        System.out.println( "diameter" + tree.diameterOfBinaryTree());
+
+
     }
 
+    
+    
 }
