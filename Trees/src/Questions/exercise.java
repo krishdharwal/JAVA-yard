@@ -19,32 +19,10 @@ public class exercise {
 
 
     public static void main(String[] args) {
-//        int[] arr = {-10,-3,0,5,9};
-//        call(arr,0,arr.length-1);
+        List<Integer> l1 = Arrays.asList(3,2,1);
+        List<Integer> l2 = Arrays.asList(3,1,2);
 
-        // this is how to reverse a string
-        String j = "dqe,fd,efuhwe,fdwe";
-//        String k = new StringBuffer("dsefde").reverse().toString();
-//
-//
-////        List<String> list = j.lines().toList();
-////        System.out.println(list);
-//
-//        String[] str = j.split(",");
-//        System.out.println(Arrays.toString(str));
-//        List<String> list = new ArrayList<>(Arrays.asList(j.split(",")));
-//        list.add("a");
-//        list.add("b");
-//        System.out.println(list);
-//
-//        list.removeFirst();
-//        System.out.println(list.get(0));
-
-        // to add number without adding
-        int num = 128;
-//        System.out.println(num * 10 + 8);
-
-        System.out.println(num / 10);
+        System.out.println(l1.equals(l2));
 
     }
 }
