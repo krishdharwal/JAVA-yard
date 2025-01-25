@@ -1,6 +1,4 @@
 package Questions;
-import java.util.Stack;
-import java.util.stream.Collectors;
 
 public class RemoveStars {
 
