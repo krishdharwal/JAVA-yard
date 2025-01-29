@@ -5,18 +5,15 @@ public class exercise2 {
 
         int a =(int) Math.sqrt(s1.length());
         int b =(int) Math.sqrt(s2.length());
-        System.out.println("a = " + a + "\n" + "b = " + b);
 
-//        System.out.println("div" + 2 / 3 + "\n" + "rem" + 2 % 3);
-        System.out.println(findCommonDivisor(6,4));
-
-        // ok now i find the length
-//        and just return the
-
+        String k = "abcbab";
+         k = k.replaceAll("a","");
+        System.out.println(k);
     }
 
 
 
+    // Euclid's algo
     static int findCommonDivisor(int i,int j){
         if (i == j){
             return i;
