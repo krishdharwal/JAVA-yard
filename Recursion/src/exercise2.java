@@ -9,6 +9,7 @@ public class exercise2 {
         String k = "abcbab";
          k = k.replaceAll("a","");
         System.out.println(k);
+
     }
 
 
