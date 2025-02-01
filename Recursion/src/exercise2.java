@@ -9,15 +9,14 @@ public class exercise2 {
 //        String k = "abcbab";
 //         k = k.replaceAll("a","");
 //        System.out.println(k);
-
-
 //        int  d = 123124;
 //        int ans = Integer.toString(d).length();
 //        System.out.println(ans);
+//
+//        int currentDigit = '2' - '0';
+//        char ch = (char)'a' + 0;
+//        System.out.println (ch);
 
-        int currentDigit = '2' - '0';
-        char ch = (char)'a' + 0;
-        System.out.println (ch);
 
     }
 
