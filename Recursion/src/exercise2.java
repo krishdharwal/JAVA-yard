@@ -73,7 +73,7 @@ public class exercise2 {
 //        System.out.println (ch);
         boolean b = false;
         b = !b;
-        System.out.println(b);
+//        System.out.println(b);
 
         int n = 4;
         boolean[][] board = {
@@ -83,7 +83,39 @@ public class exercise2 {
                 {false,false,false}
         };
 //        System.out.println(Arrays.deepToString(board));
-        System.out.println(chkForQueenExistance(board,0,0));
+//        System.out.println(chkForQueenExistance(board,0,0));
+//        System.out.println(findValidPair("9212"));
+
     }
 
+    public static String findValidPair(String s) {
+        StringBuilder ans = new StringBuilder();
+
+        for (int i = 0; i < s.length()-1; i++) {
+            char fir = s.charAt(i);
+            char sec = s.charAt(i+1);
+
+            if (fir == sec){
+                continue;
+            }
+
+            int fCount = countIt(s,fir,i);
+
+            if (fCount == fir - '0'){
+                ans.append(fir);
+            }
+        }
+
+        return ans.toString();
+    }
+
+    private static int countIt(String s, char ch,int i) {
+        int count = 0;
+        for (int j = i; j < s.length(); j++) {
+            if (ch == s.charAt(j)){
+                count++;
+            }
+        }
+        return count;
+    }
 }
