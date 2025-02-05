@@ -5,48 +5,42 @@ import java.util.Arrays;
 public class SudokuSolver {
 
     public void solveSudoku(int[][] board) {
-        if (isNotEmpty(board)){
-            display(board);
-            return;
-        }
+        solve(board);
+    }
 
+    private boolean solve(int[][] board) {
         int r = -1;
         int c = -1;
+        boolean isEmpty = false;
         for (int i = 0; i < board.length; i++) {
-            for (int j = 0; j < board[0].length; j++) {
-                if (board[i][j] == 0) {
+            for (int j = 0; j < board.length; j++) {
+                if (board[i][j] == 0){
+                    isEmpty = true;
                     r = i;
                     c = j;
+                    break;
                 }
             }
+            if (isEmpty) break;
+
         }
-        if (r == -1){
-            // means sudoku have no empty elements
-            return;
+        if(!isEmpty){
+            // means the sudoku is solved
+            display(board);
+            return true;
         }
+
         for (int i = 1; i <= 9 ; i++) {
-            if (isSafe(board,r,c,i)){
+            if (isSafe(board,r,c,i)) {
                 board[r][c] = i;
-                solveSudoku(board);
+                if (solve(board)) return true;
                 board[r][c] = 0;
             }
 
         }
 
+        return false;
     }
-
-    private boolean isNotEmpty(int[][] board) {
-        for (int i = 0; i < board.length; i++) {
-            for (int j = 0; j < board[0].length; j++) {
-                if (board[i][j] == 0) {
-                    return false;
-                }
-            }
-
-        }
-        return true;
-    }
-
 
     public boolean isSafe(int[][] board, int r , int c, int val) {
         // check for the 3 X 3 grid
@@ -78,18 +72,19 @@ public class SudokuSolver {
 
     public static void main(String[] args) {
         SudokuSolver s = new SudokuSolver();
-        int[][] sudokuGrid = {
-                {5, 3, 0, 0, 7, 0, 0, 0, 0},
-                {6, 0, 0, 1, 9, 5, 0, 0, 0},
-                {0, 9, 8, 0, 0, 0, 0, 6, 0},
-                {8, 0, 0, 0, 6, 0, 0, 0, 3},
-                {4, 0, 0, 8, 0, 3, 0, 0, 1},
-                {7, 0, 0, 0, 2, 0, 0, 0, 6},
-                {0, 6, 0, 0, 0, 0, 2, 8, 0},
-                {0, 0, 0, 4, 1, 9, 0, 0, 5},
-                {0, 0, 0, 0, 8, 0, 0, 7, 9}
+        int[][] board = {
+                {0, 0, 0, 0, 0, 0, 0, 0, 0},
+                {0, 9, 0, 0, 1, 0, 0, 3, 0},
+                {0, 0, 6, 0, 2, 0, 7, 0, 0},
+                {0, 0, 0, 3, 0, 4, 0, 0, 0},
+                {2, 1, 0, 0, 0, 0, 0, 9, 8},
+                {0, 0, 0, 0, 0, 0, 0, 0, 0},
+                {0, 0, 2, 5, 0, 6, 4, 0, 0},
+                {0, 8, 0, 0, 0, 0, 0, 1, 0},
+                {0, 0, 0, 0, 0, 0, 0, 0, 0}
         };
 
-        s.solveSudoku(sudokuGrid);
+
+        s.solveSudoku(board);
     }
 }

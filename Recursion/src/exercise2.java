@@ -71,21 +71,24 @@ public class exercise2 {
 //        int currentDigit = '2' - '0';
 //        char ch = (char)'a' + 0;
 //        System.out.println (ch);
-        boolean b = false;
-        b = !b;
-//        System.out.println(b);
-
-        int n = 4;
-        boolean[][] board = {
-                {false,false,false},
-                {false,false,false},
-                {false,false,true},
-                {false,false,false}
-        };
+//        boolean b = false;
+//        b = !b;
+////        System.out.println(b);
+//
+//        int n = 4;
+//        boolean[][] board = {
+//                {false,false,false},
+//                {false,false,false},
+//                {false,false,true},
+//                {false,false,false}
+//        };
 //        System.out.println(Arrays.deepToString(board));
 //        System.out.println(chkForQueenExistance(board,0,0));
 //        System.out.println(findValidPair("9212"));
 
+        int i = 9;
+        char ch = (char) (i + '0');
+        System.out.println(ch);
     }
 
     public static String findValidPair(String s) {
