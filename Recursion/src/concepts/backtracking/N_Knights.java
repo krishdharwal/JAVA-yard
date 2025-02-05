@@ -16,18 +16,21 @@ public class N_Knights {
         if (r == board.length-1 && c == board.length){
             return;
         }
+
         if (c == board.length){
             findCombinations(board,r+1,0,knight);
             return;
         }
 
+        // if there is safe position place the knight
             if (isSafePosition(board,r,c)){
                 board[r][c] = true;
                 findCombinations(board,r,c+1,knight-1);
                 board[r][c] = false;
             }
 
-        findCombinations(board,r,c+1,knight);
+         // if there is no safe place just skip that block
+           findCombinations(board,r,c+1,knight);
 
     }
 

@@ -118,4 +118,19 @@ public class exercise2 {
         }
         return count;
     }
+
+    void checkForStartingPointIn3X3Grid(){
+        int r = 8 - 8 % 3;
+        int c = 2 - 2 % 3;
+        boolean[][] arr = new boolean[9][9];
+        for (int i = r; i <= r + 2; i++) {
+            for (int j = c; j <= c + 2 ; j++) {
+                arr[i][j] = true;
+            }
+        }
+
+        for (boolean[] a : arr){
+            System.out.println(Arrays.toString(a));
+        }
+    }
 }
