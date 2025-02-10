@@ -19,10 +19,28 @@ public class exercise {
 
 
     public static void main(String[] args) {
-        List<Integer> l1 = Arrays.asList(3,2,1);
-        List<Integer> l2 = Arrays.asList(3,1,2);
+//        List<Integer> l1 = Arrays.asList(3,2,1);
+//        List<Integer> l2 = Arrays.asList(3,1,2);
+//
+//        System.out.println(l1.equals(l2));
 
-        System.out.println(l1.equals(l2));
+        boolean i = true;
+        boolean j = false;
+        if (i == j){
+            System.out.println("ok");
+        }
 
+
+        String s1 = "a1";
+        String s2 = "c3";
+
+        int r1  = s1.charAt(0) - 'a';
+        int c1 = s1.charAt(1) - '0';
+
+        int r2 = s2.charAt(0)  - 'a';
+        int c2 = s2.charAt(1) - '0';
+
+        System.out.println(r1 + " "  + c1);
+        System.out.println(r2 + " "  + c2);
     }
 }
