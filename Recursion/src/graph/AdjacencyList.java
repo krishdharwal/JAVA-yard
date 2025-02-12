@@ -2,8 +2,6 @@ package graph;
 
 // in this we represent the graph using [ List of List ] or [ List of Linked List ] or [ MAP of Linked List ]
 
-import jdk.dynalink.linker.LinkerServices;
-
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -11,11 +9,11 @@ import java.util.Map;
 
 
 // I am using Map of Linked list;
-public class AdjasencyList {
+public class AdjacencyList {
 
     private Map<Integer,List<Integer>> map;
 
-    AdjasencyList(){
+    AdjacencyList(){
         this.map = new HashMap<>();
     }
 
@@ -56,8 +54,12 @@ public class AdjasencyList {
         }
     }
 
+
+
+
+
     public static void main(String[] args) {
-        AdjasencyList listGraph = new AdjasencyList();
+        AdjacencyList listGraph = new AdjacencyList();
         for (int i = 0; i < 5; i++) {
             listGraph.addVertex(i);
         }
@@ -68,7 +70,10 @@ public class AdjasencyList {
 
         listGraph.display();
 
-        listGraph.deleteNode(2);
-        listGraph.display();
+//        listGraph.deleteNode(2); queue.add(ele);
+
+
+        DFS dfs = new DFS();
+        dfs.depthFirstSearch(1,listGraph.map);
     }
 }
