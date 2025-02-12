@@ -26,6 +26,11 @@ public class AdjasencyMatrix {
         matrix[j-1][i-1] = 1;
     }
 
+    public void add(int i,int j,int weight){
+        matrix[i-1][j-1] = weight;
+        matrix[j-1][i-1] = weight;
+    }
+
     public void remove(int i , int j){
        matrix[i-1][j-1] = 0;
        matrix[j-1][i-1] = 0;
