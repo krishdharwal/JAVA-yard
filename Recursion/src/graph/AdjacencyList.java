@@ -75,5 +75,8 @@ public class AdjacencyList {
 
         DFS dfs = new DFS();
         dfs.depthFirstSearch(1,listGraph.map);
+
+        BFS bfs = new BFS();
+        bfs.breadthFirstSearch(1,listGraph.map);
     }
 }

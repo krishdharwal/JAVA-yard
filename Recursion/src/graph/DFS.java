@@ -8,22 +8,23 @@ public class DFS  {
 
     public void depthFirstSearch(int startingVertex,Map<Integer, List<Integer>> map){
         Set<Integer> visited = new HashSet<>();
-        Queue<Integer> queue = new LinkedList<>();
+        Stack<Integer> stack = new Stack<>();
 
-        queue.add(startingVertex);
+        stack.add(startingVertex);
 
-        while (!queue.isEmpty()){
+        System.out.println("DFS");
+        while (!stack.isEmpty()){
 
-            int currentNode = queue.poll();
+            int currentNode = stack.pop();
             if (visited.contains(currentNode)){
                 continue;
             }
             visited.add(currentNode);
-            System.out.println(currentNode);
+            System.out.print(currentNode + " -> ");
 
             for(int ele : map.getOrDefault(currentNode,new LinkedList<>())){
                 if (!visited.contains(ele)){
-                    queue.add(ele);
+                    stack.add(ele);
                 }
             }
 
