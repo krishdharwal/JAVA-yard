@@ -1,5 +1,7 @@
 package Custom_Linked_List;
 
+import Questions.ReorderList;
+
 public class Linkedlist {
     private ListNode head;
     private ListNode tail;
@@ -212,21 +214,26 @@ public class Linkedlist {
     }
 
     public static void main(String[] args) {
-       Linkedlist[] list = new Linkedlist[2];
+//       Linkedlist[] list = new Linkedlist[2];
 
         Linkedlist list1 = new Linkedlist();
         list1.add(1);
         list1.add(4);
         list1.add(5);
+        list1.add(8);
+
+//        ReorderList reorderList = new ReorderList();
+//        reorderList.findMiddle(list1);
 
 
-        Linkedlist list2 = new Linkedlist();
-        list2.add(1);
-        list2.add(3);
-        list2.add(4);
+//
+//        Linkedlist list2 = new Linkedlist();
+//        list2.add(1);
+//        list2.add(3);
+//        list2.add(4);
 
-        list[0] = list1;
-        list[1] = list2;
+//        list[0] = list1;
+//        list[1] = list2;
 
 
     }

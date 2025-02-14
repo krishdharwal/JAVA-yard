@@ -598,20 +598,16 @@ public class Linkedlist {
         linkedlist_1.add(1);
         linkedlist_1.add(4);
         linkedlist_1.add(5);
+        linkedlist_1.add(7);
+        linkedlist_1.add(9);
 
         linkedlist_1.display();
 
-        Linkedlist linkedlist_2 = new Linkedlist();
-        linkedlist_2.add(1);
-        linkedlist_2.add(3);
-        linkedlist_2.add(4);
+        ReorderList reorderList = new ReorderList();
+       ListNode ans =  reorderList.findMiddle(linkedlist_1.head);
+        System.out.println(ans.val);
 
-        linkedlist_2.display();
-
-        ListNode[] arr = new ListNode[2];
-        arr[0] = linkedlist_1.head;
-
-
+        reorderList.reverse(linkedlist_1.head);
 
     }
 
