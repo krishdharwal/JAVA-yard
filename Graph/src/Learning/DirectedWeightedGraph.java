@@ -1,5 +1,7 @@
 package Learning;
 
+import Learning.SpanningTree.PrimsAlgo;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -50,9 +52,13 @@ public class DirectedWeightedGraph {
         graph.addDirectedEdge(2,3,2);
         graph.addUnDirectedEdge(2,4,5);
         graph.addUnDirectedEdge(4,5,1);
-        graph.addDirectedEdge(1,4,9);
+        graph.addDirectedEdge(1,4,0);
 
         graph.display();
+
+        PrimsAlgo primsAlgo  = new PrimsAlgo();
+        primsAlgo.findMinimumSpanningTree(graph.map,1);
+
     }
 }
 
