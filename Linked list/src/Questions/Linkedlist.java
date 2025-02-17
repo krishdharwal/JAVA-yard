@@ -32,6 +32,16 @@ public class Linkedlist {
     }
 
     // 2.  displaying whole thing
+    public void display(ListNode head) {
+        ListNode temp = head;
+        while (temp != null) {
+            System.out.print(temp.val + " ->");
+            // this address refrence is pointing to the next node
+            temp = temp.next;
+        }
+        System.out.println("END");
+    }
+
     public void display() {
         ListNode temp = head;
         while (temp != null) {
@@ -177,7 +187,7 @@ public class Linkedlist {
             s = s.next;
         }
 
-        joined.display();
+        joined.display(joined.head);
     }
 
     public boolean CyclePresentOrNot() {
@@ -593,23 +603,7 @@ public class Linkedlist {
         }
     }
 
-    public static void main(String[] args) {
-        Linkedlist linkedlist_1 = new Linkedlist();
-        linkedlist_1.add(1);
-        linkedlist_1.add(4);
-        linkedlist_1.add(5);
-        linkedlist_1.add(7);
-        linkedlist_1.add(9);
 
-        linkedlist_1.display();
-
-        ReorderList reorderList = new ReorderList();
-       ListNode ans =  reorderList.findMiddle(linkedlist_1.head);
-        System.out.println(ans.val);
-
-        reorderList.reverse(linkedlist_1.head);
-
-    }
 
     public ListNode RotateLL(){
         if(head == null || head.next == null){
@@ -678,7 +672,23 @@ public class Linkedlist {
         }
         return header;
     }
+    public static void main(String[] args) {
+        Linkedlist linkedlist_1 = new Linkedlist();
+        linkedlist_1.add(1);
+        linkedlist_1.add(4);
+        linkedlist_1.add(5);
+        linkedlist_1.add(7);
+        linkedlist_1.add(9);
 
+        linkedlist_1.display(linkedlist_1.head);
+
+        ReorderList reorderList = new ReorderList();
+        ListNode ans =  reorderList.findMiddle(linkedlist_1.head);
+        System.out.println(ans.val);
+
+        linkedlist_1.display(reorderList.reverse(reorderList.findMiddle(linkedlist_1.head)));
+
+    }
 
 }
 

@@ -5,13 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5bd3f1c2-3770-421a-9443-769c67ce0e17" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Learning/HeapTraverse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Learning/MinHeap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Graph/src/Learning/DirectedWeightedGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Graph/src/Learning/DirectedWeightedGraph.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/arraylist_swap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Learning/arraylist_swap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/heap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Learning/heap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Linked list/src/Questions/Linkedlist.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Linked list/src/Questions/Linkedlist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Linked list/src/Questions/ReorderList.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Linked list/src/Questions/ReorderList.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +40,7 @@
   "keyToString": {
     "Application.HeapPractice.executor": "Run",
     "Application.HeapTraverse.executor": "Run",
+    "Application.KLE.executor": "Run",
     "Application.KthLargest.executor": "Run",
     "Application.MaxHeap.executor": "Run",
     "Application.MinHeap.executor": "Run",
@@ -62,10 +60,23 @@
     "project.structure.side.proportion": "0.0"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.KthLargest">
+  <component name="RunManager" selected="Application.KLE">
     <configuration name="HeapTraverse" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Learning.HeapTraverse" />
       <module name="Heaps" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="KLE" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Questions.KLE" />
+      <module name="Heaps" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Questions.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -97,20 +108,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="heap" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Learning.heap" />
-      <module name="Heaps" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.KLE" />
         <item itemvalue="Application.KthLargest" />
         <item itemvalue="Application.MinHeap" />
         <item itemvalue="Application.MaxHeap" />
         <item itemvalue="Application.HeapTraverse" />
-        <item itemvalue="Application.heap" />
       </list>
     </recent_temporary>
   </component>
@@ -132,15 +136,6 @@
           <url>file://$PROJECT_DIR$/src/Questions/KthLargest.java</url>
           <line>70</line>
           <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/Questions/KthLargest.java</url>
-          <line>24</line>
-          <properties class="Questions.KthLargest" method="&lt;init&gt;">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

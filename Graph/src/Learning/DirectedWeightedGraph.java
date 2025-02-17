@@ -1,5 +1,6 @@
 package Learning;
 
+import Learning.SpanningTree.KruskalAlgo;
 import Learning.SpanningTree.PrimsAlgo;
 
 import java.util.ArrayList;
@@ -48,17 +49,19 @@ public class DirectedWeightedGraph {
     public static void main(String[] args) {
         DirectedWeightedGraph graph = new DirectedWeightedGraph(5);
 
-        graph.addDirectedEdge(1,2,4);
-        graph.addDirectedEdge(2,3,2);
+        graph.addUnDirectedEdge(1,2,4);
+        graph.addUnDirectedEdge(2,3,2);
         graph.addUnDirectedEdge(2,4,5);
         graph.addUnDirectedEdge(4,5,1);
-        graph.addDirectedEdge(1,4,0);
+        graph.addUnDirectedEdge(1,4,8);
 
-        graph.display();
+//        graph.display();
 
-        PrimsAlgo primsAlgo  = new PrimsAlgo();
-        primsAlgo.findMinimumSpanningTree(graph.map,1);
+//        PrimsAlgo primsAlgo  = new PrimsAlgo();
+//        primsAlgo.findMinimumSpanningTree(graph.map,1);
 
+        KruskalAlgo kruskalAlgo = new KruskalAlgo();
+        kruskalAlgo.kruskalAlgo(graph.map);
     }
 }
 

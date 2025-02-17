@@ -8,27 +8,22 @@ import Questions.Linkedlist.ListNode;
 public class ReorderList {
 
     public void reorderList(ListNode head) {
-         ListNode left = head;
-         ListNode right = reverse(findMiddle(left));
+        ListNode mid = findMiddle(head);
 
-         ListNode leftNext = left.next;
-         ListNode rightNext = right.next;
+        ListNode Head_first = head;
+        ListNode Head_second = reverse(mid);
+        while (Head_first != null && Head_second != null) {
+            ListNode temp = Head_first.next;
+            Head_first.next = Head_second;
+            Head_first = temp;
 
-         while (left != null || right != null){
-
-
-             left = leftNext;
-             right = rightNext;
-
-             if (leftNext != null){
-                 leftNext = leftNext.next;
-             }
-
-             if (rightNext != null){
-                 rightNext = rightNext.next;
-             }
-         }
-
+            temp = Head_second.next;
+            Head_second.next = Head_first;
+            Head_second = temp;
+        }
+        if (Head_first != null) {
+            Head_first.next = null;
+        }
     }
 
 
