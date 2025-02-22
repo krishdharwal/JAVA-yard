@@ -9,7 +9,7 @@ public class GraphNode {
 
     }
 
-    GraphNode(int source, int destination , int weight){
+    public GraphNode(int source, int destination, int weight){
         this.source = source;
         this.destination = destination;
         this.weight = weight;

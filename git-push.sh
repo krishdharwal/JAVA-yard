@@ -5,5 +5,5 @@ read msg
 
 git add .
 git commit -am"$msg"
-git push link
+git push 
  
