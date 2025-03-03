@@ -1,5 +1,8 @@
 package learing;
 
+import Questions.DFS.PathSum3;
+import Questions.Node;
+
 import java.util.Scanner;
 
 public class Binary_tree {
@@ -26,50 +29,18 @@ public class Binary_tree {
         }
 
         // for left side
-        if (data < node.data){
+        if (data < node.val){
             node.left = addNext(node.left,data);
         }
 
         // for right side
-        if (data > node.data){
+        if (data > node.val){
             node.right = addNext(node.right,data);
         }
 
         node.height = Math.max(height(node.left),height(node.right) +1);
         return node;
     }
-
-
-
-    private class Node{
-        public int height;
-        private Node left;
-        public Node right;
-        private int data;
-        public Node(int data){
-            this.data = data;
-        }
-
-    }
-
-    public static void main(String[] args) {
-        Scanner in  = new Scanner(System.in);
-        Binary_tree node = new Binary_tree();
-        node.add(10);
-        node.add(8);
-        node.add(4);
-        node.add(9);
-        node.add(12);
-//        node.display();
-//        node.display_Pre_Order();
-//        node.display_Post_Order();
-        node.Tree_form_display();
-
-    }
-
-
-
-
 
 
     public void Tree_form_display(){
@@ -85,10 +56,10 @@ public class Binary_tree {
             for (int i = 1; i < level; i++) {
                 System.out.print("\t\t");
             }
-            System.out.println("|-------> [ " + node.data + " ]");
+            System.out.println("|-------> [ " + node.val + " ]");
         }
         else{
-            System.out.println(" [ " + node.data + " ]");
+            System.out.println(" [ " + node.val + " ]");
         }
 
         Tree_form_display(node.left,level+1);
@@ -108,7 +79,7 @@ public class Binary_tree {
             return;
         }
         display_IN_Order(node.left);
-        System.out.print(node.data + " ");
+        System.out.print(node.val + " ");
         display_IN_Order(node.right);
     }
 
@@ -124,7 +95,7 @@ public class Binary_tree {
         if (node == null){
             return;
         }
-        System.out.print(node.data + " ");
+        System.out.print(node.val + " ");
         display_Pre_Order(node.left);
         display_Pre_Order(node.right);
     }
@@ -142,8 +113,32 @@ public class Binary_tree {
 
         display_Post_Order(node.left);
         display_Post_Order(node.right);
-        System.out.print(node.data + " ");
+        System.out.print(node.val + " ");
     }
 
+
+
+    public static void main(String[] args) {
+        Scanner in  = new Scanner(System.in);
+        Binary_tree node = new Binary_tree();
+        node.add(4);
+        node.add(8);
+        node.add(4);
+        node.add(12);
+        node.add(3);
+        node.add(1);
+        node.add(2);
+        node.add(6);
+
+
+//        node.display();
+//        node.display_Pre_Order();
+//        node.display_Post_Order();
+        PathSum3 p3 = new PathSum3();
+       int ans =  p3.pathSum(node.root,8);
+        System.out.println("ANS -> " + ans);
+        node.Tree_form_display();
+
+    }
 
 }

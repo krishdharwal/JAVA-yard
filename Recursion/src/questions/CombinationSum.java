@@ -2,34 +2,35 @@ package questions;
 
 import java.util.*;
 
+//combination sum , and i can use duplicates
+
 public class CombinationSum {
 
-    public List<List<Integer>> globalList = new ArrayList<>();
-
+    public List<List<Integer>> gList = new ArrayList<>();
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
-
-        findCombinations(candidates,new ArrayList<>(),target,0,0);
-        return globalList;
-
+        Arrays.sort(candidates);
+        findCombinations(candidates,new ArrayList<>(),target, 0);
+        return gList;
     }
 
-    private void findCombinations(int[] candidates, List<Integer> list,int target, int currentIndex, int sum) {
-        if (sum > target || currentIndex >= candidates.length){
+    private void findCombinations(int[] arr, List<Integer> list,int target, int idx) {
+        if (target == 0){
+            gList.add(new ArrayList<>(list));
             return;
         }
 
-        if (sum == target){
-            globalList.add(new ArrayList<>(list));
+        if (target < 0) {
             return;
         }
 
-       int idxVal = candidates[currentIndex];
-
-        list.add(idxVal);
-        findCombinations(candidates,list,target,currentIndex,sum+idxVal);
-        list.removeLast();
-        findCombinations(candidates,list,target,currentIndex+1,sum);
-
+        for (int i = idx; i < arr.length; i++) {
+            if (arr[i] > target){
+                break;
+            }
+            list.add(arr[i]);
+            findCombinations(arr,list,target - arr[i],i);
+            list.remove(list.size()-1);
+        }
     }
 
 
