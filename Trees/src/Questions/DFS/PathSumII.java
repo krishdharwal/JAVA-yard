@@ -12,26 +12,20 @@ public class PathSumII {
         return globalList;
     }
 
-    private void findPathSumII(TreeNode node, int tar, List<Integer>  list) {
-        if (node == null){
+    private void findPathSumII(TreeNode node, int tar, List<Integer> list){
+        if (node == null ){
             return;
         }
 
-        if (node.left == null && node.right == null && tar == 0){
+        list.add(node.val);
+        if(node.left == null && node.right == null && tar - node.val == 0){
             globalList.add(new ArrayList<>(list));
-            list.remove(list.size()-1);
-            return;
         }
-
-        if (tar < 0){
-            return;
+        else{
+            findPathSumII(node.left,tar - node.val,list);
+            findPathSumII(node.right,tar - node.val,list);
         }
+        list.remove(list.size()-1);
 
-        int currVal = node.val;
-        list.add(currVal);
-        tar -= currVal;
-
-        findPathSumII(node.left,tar,list);
-        findPathSumII(node.right,tar,list);
     }
 }
