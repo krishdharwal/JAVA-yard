@@ -5,39 +5,22 @@ import Questions.Node;
 
 public class PathSum3 {
 
-    int count = 0;
-    int originalTar;
     public int pathSum(Node root, int targetSum) {
-        originalTar = targetSum;
-        findPathSumIII(root,targetSum);
-        return count;
+        if (root == null){
+            return 0;
+        }
+        return  findPathSumIII(root,targetSum) + pathSum(root.left,targetSum) + pathSum(root.right,targetSum);
     }
 
-    public void findPathSumIII(Node node, int tar){
-        if(tar == 0){
-            count += 1;
-            return;
+    public int findPathSumIII(Node node, int tar){
+        if (node == null){
+            return 0;
+        }
+        if (tar - node.val == 0){
+            return 1;
         }
 
-        if(node == null){
-            return;
-        }
-
-        int val = node.val;
-
-        if (val < 0){
-            tar += Math.abs(val);
-        }
-        else if(val > tar){
-            tar = originalTar;
-        }
-        else {
-            tar -= node.val;
-        }
-
-
-        findPathSumIII(node.left,tar);
-        findPathSumIII(node.right,tar);
+       return findPathSumIII(node.left,tar - node.val) + findPathSumIII(node.right,tar - node.val);
     }
 
 }
