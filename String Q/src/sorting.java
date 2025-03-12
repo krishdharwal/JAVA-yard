@@ -2,7 +2,7 @@ import java.util.Arrays;
 
 public class sorting {
     public static void main(String[] args) {
-        int[] arr = {3,2,1,4,5};
+        int[] arr = {90,566,7,72,2};
 //         insertionSort(arr);
 //         bubble(arr);
 //         selection(arr);
