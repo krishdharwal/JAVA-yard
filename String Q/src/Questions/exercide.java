@@ -6,20 +6,7 @@ import java.util.Map;
 
 public class exercide {
     public static void main(String[] args) {
-        int[][] grid = {
-                {2,4,5},
-                {1,3,4},
-                {9,3,9}
-        };
-//        diagonalSort(grid,1,0);
-        for(int[] arr : grid) {
-//            System.out.println(Arrays.toString(arr));
-        }
-
-//        System.out.println(Arrays.deepToString(grid));
-        int[] arr = {9,4,5,8,3,4};
-        selectionSort(arr);
-        System.out.println(Arrays.toString(arr));
+        String s = "aaabbbcc";
 
     }
 
