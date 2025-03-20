@@ -39,3 +39,12 @@ public class stringCompression {
         System.out.println(ans);
     }
 }
+
+/*
+ for loop can also be written as
+
+ for(int i = 0; i < 100;){
+         i++;
+ }
+
+ */
