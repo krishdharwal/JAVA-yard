@@ -11,7 +11,7 @@ public class MaxKthPairs {
 
         int pairs = 0;
         while (i < j){
-            int sum = nums[j] + nums[i]
+            int sum = nums[j] + nums[i];
             if (sum == k){
                 pairs++;
                 j--;
