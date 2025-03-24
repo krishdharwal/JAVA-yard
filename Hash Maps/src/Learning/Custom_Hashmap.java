@@ -1,6 +1,4 @@
-// problem -> this will override the element if some other object got same index value
-
-import java.util.Arrays;
+package Learning;// problem -> this will override the element if some other object got same index value
 
 public class Custom_Hashmap{
     private Hash_Table[] arr;
@@ -49,7 +47,7 @@ public class Custom_Hashmap{
 
     @Override
     public String toString() {
-        return "Custom_Hashmap{" +
+        return "Learning.Custom_Hashmap{" +
                 "arr=" + arr[0] +
                 '}';
     }

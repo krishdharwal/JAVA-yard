@@ -1,3 +1,5 @@
+package Learning;
+
 import java.util.HashMap;
 
 public class main {
