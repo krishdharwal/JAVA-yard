@@ -5,15 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="48ff7bdd-1115-48d6-924e-479e32bfa305" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Learning/TraverseInMap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Questions/UniqueNumberOfOccurence.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Custom_Hashmap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Learning/Custom_Hashmap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Hash_Map_with_collisionCure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Learning/Hash_Map_with_collisionCure.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hash_code.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Learning/hash_code.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hashing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Learning/hashing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Learning/main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +49,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "java",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/dusty-dragon/Documents/JAVA-yard/Hash Maps",
+    "last_opened_file_path": "/home/dusty-dragon/Documents/JAVA-yard/Stack and Queue",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0"
@@ -117,7 +109,6 @@
         <item itemvalue="Application.main" />
         <item itemvalue="Application.Hash_Map_with_collisionCure" />
         <item itemvalue="Application.Custom_Hashmap" />
-        <item itemvalue="Application.Custom_Hashmap (1)" />
       </list>
     </recent_temporary>
   </component>
