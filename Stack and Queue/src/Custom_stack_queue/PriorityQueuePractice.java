@@ -4,7 +4,7 @@ import java.util.*;
 
 public class PriorityQueuePractice {
     public static void main(String[] args) {
-        Queue<Integer> q = new PriorityQueue<>();
+        Queue<Integer> q = new PriorityQueue<>(Collections.reverseOrder());
         q.offer(2);
         q.add(33);
         q.offer(3);
@@ -31,17 +31,16 @@ public class PriorityQueuePractice {
     }
 
     public static int findKthLargest(int[] nums, int k){
-    Queue<Integer> queue = new PriorityQueue<>();
+    Queue<Integer> queue = new PriorityQueue<>(Collections.reverseOrder());
         for (int i = 0; i < nums.length; i++) {
         queue.offer(nums[i]);
     }
-
-    List<Integer> list = new ArrayList<>();
-
-       while (!queue.isEmpty()){
-        list.add(queue.poll());
-    }
-        return  list.get(list.size() - k );
+        System.out.println(queue);
+       while (!queue.isEmpty() && k > 1){
+         queue.poll();
+         k--;
+       }
+        return queue.poll();
 }
 
 
