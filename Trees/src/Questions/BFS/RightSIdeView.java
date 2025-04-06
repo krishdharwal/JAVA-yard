@@ -1,40 +1,28 @@
 package Questions.BFS;
 
-import Questions.Node;
+import Questions.TreeNode;
 
 import java.util.*;
 
 public class RightSIdeView {
-    public List<Integer> rightSideView(Node root) {
+    public List<Integer> rightSideView(TreeNode root) {
+        if(root == null) return new ArrayList<>();
         List<Integer> list = new ArrayList<>();
-        if(root == null){
-            return list;
-        }
-
-        Queue<Node> queue = new LinkedList<>();
+        Queue<TreeNode> queue = new LinkedList<>();
         queue.add(root);
-        // list.add(root.val);
-
+        int n = 0;
         while(!queue.isEmpty()){
-
-            Node last = queue.peek();
-            int level = queue.size();
-
-            for(int i=0; i<level; i++){
-                Node temp = queue.poll();
-                last = temp;
-                if(temp.left != null) queue.add(temp.left);
-                if(temp.right != null) queue.add(temp.right);
-
+            n = queue.size();
+            for(int i = 1; i <= n; i++){
+                TreeNode node = queue.poll();
+                if(node.left != null) queue.offer(node.left);
+                if(node.right != null) queue.offer(node.right);
+                if(i == n) list.add(node.val);
             }
-
-            list.add(last.val);
-
 
         }
         return list;
     }
-
     public static void main(String[] args) {
         Deque<Integer> deque = new LinkedList<>();
         deque.add(11);
