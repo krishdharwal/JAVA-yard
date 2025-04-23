@@ -1,5 +1,8 @@
 package Questions;
 
+import java.util.Arrays;
+
+// binary search
 public class SuccessfullPairsOfSpellsAndPortions {
     public int[] successfulPairs(int[] spells, int[] potions, long success) {
 
