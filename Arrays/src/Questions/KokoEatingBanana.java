@@ -2,6 +2,7 @@ package Questions;
 
 import java.util.Arrays;
 
+// binary search
 public class KokoEatingBanana {
 
     public int minEatingSpeed(int[] piles, int h) {
