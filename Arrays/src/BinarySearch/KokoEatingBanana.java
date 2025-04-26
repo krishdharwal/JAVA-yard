@@ -1,6 +1,4 @@
-package Questions;
-
-import java.util.Arrays;
+package BinarySearch;
 
 // binary search
 public class KokoEatingBanana {

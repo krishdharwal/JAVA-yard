@@ -1,4 +1,4 @@
-package Questions;
+package BinarySearch;
 
 // Binary Search Q - 374
 /**
