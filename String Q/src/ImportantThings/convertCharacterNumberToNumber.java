@@ -12,6 +12,8 @@ public class convertCharacterNumberToNumber {
         char c = '4';
         int n = 3;
          n = n * 10 + (c - '0');
+         StringBuilder s = new StringBuilder();
+
         System.out.println(n); //34
     }
 }
