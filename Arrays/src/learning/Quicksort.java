@@ -18,8 +18,8 @@ public class Quicksort {
         int m = s + (e -  s) / 2;
         int piv = arr[m];
         while(s <= e){
-            if ( arr[s] < piv) s++;
-            if (piv < arr[e]) e--;
+            while ( arr[s] < piv) s++;
+            while (piv < arr[e]) e--;
             if (s <= e) {
                 int temp = arr[s];
                 arr[s] = arr[e];
