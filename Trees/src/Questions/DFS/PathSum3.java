@@ -1,26 +1,36 @@
 package Questions.DFS;
 
 import Questions.Node;
+import Questions.TreeNode;
 
 
 public class PathSum3 {
 
-    public int pathSum(Node root, int targetSum) {
+    /* plan ->
+    firstly traverse through every node
+    treat every node as a root and call count function from every node
+    and just count as you usually does in a tree
+     */
+
+    public int pathSum(TreeNode root, int targetSum) {
+        // traverse
         if (root == null){
             return 0;
         }
-        return  findPathSumIII(root,targetSum) + pathSum(root.left,targetSum) + pathSum(root.right,targetSum);
+        return pathSum(root.left,targetSum) + pathSum(root.right,targetSum) + findSum(root,targetSum,(long) 0);
     }
 
-    public int findPathSumIII(Node node, int tar){
+    private int findSum(TreeNode node, int tar,long sum) {
         if (node == null){
             return 0;
         }
-        if (tar - node.val == 0){
-            return 1;
+        int count = 0;
+        sum += node.val;
+        if (sum == tar){
+            count++;
         }
-
-       return findPathSumIII(node.left,tar - node.val) + findPathSumIII(node.right,tar - node.val);
+        count += findSum(node.left,tar,sum) + findSum(node.right,tar,sum);
+        return count;
     }
 
 }
