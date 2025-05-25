@@ -1,41 +1,47 @@
 package perfixSum;
 
 import java.util.Arrays;
-
+                               // Look Back Algorithm
 public class ZeroArrayTransformation_2 {
 
     public int minZeroArray(int[] nums, int[][] queries) {
-        int n = nums.length;
-        int[] diff = new int[n];
-        int k = 0;
-        for (int[] arr : queries){
-            int l = arr[0];
-            int r = arr[1];
-            int val = arr[2];
-            diff[l] += val;
-            if (r+1 < n) diff[r+1] += val - (val + val );
-            k++;
-            System.out.println(Arrays.toString(diff));
-            if(findIsArrayIsZero(nums,diff)){
-                return k;
+        // use binary search
+        int s = 0;
+        int e = queries.length-1;
+
+        if (!isZero(nums,queries,e)){
+            return -1;
+        }
+        while (s < e){
+            int m = s + (e - s) / 2;
+            if (isZero(nums,queries,m)){
+                e = m;
+            }else {
+                s = m+1;
             }
         }
-        return -1;
+        return s;
     }
 
-    private boolean findIsArrayIsZero(int[] nums, int[] diff) {
-        int sum = 0;
-        for (int i = 0; i < nums.length; i++) {
-            sum += diff[i];
-            if (sum < nums[i]) return false;
+    public boolean isZero(int[] nums,int[][] queries,int m){
+        int n = nums.length;
+        int[] diff = new int[n];
+
+        for (int i=0; i<=m; i++){
+            int l = queries[i][0];
+            int r = queries[i][1];
+            int val = queries[i][2];
+
+            diff[l] = val;
+            if (r+1 < n) diff[r+1] = val - (val + val);
+        }
+
+        int prefixSum = 0;
+        for (int i = 0; i < n; i++) {
+            prefixSum += diff[i];
+            if (nums[i] > prefixSum) return false;
         }
         return true;
-    }
-
-    public static void main(String[] args) {
-        ZeroArrayTransformation_2 z = new ZeroArrayTransformation_2();
-        z.minZeroArray(new int[]{2,0,2},new int[][]{{0,2,1},{0,2,1}});
-
     }
 
 }
