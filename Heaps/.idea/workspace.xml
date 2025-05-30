@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5bd3f1c2-3770-421a-9443-769c67ce0e17" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../Graph/src/Learning/DirectedWeightedGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Graph/src/Learning/DirectedWeightedGraph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Linked list/src/Questions/Linkedlist.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Linked list/src/Questions/Linkedlist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Linked list/src/Questions/ReorderList.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Linked list/src/Questions/ReorderList.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,30 +34,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.HeapPractice.executor": "Run",
-    "Application.HeapTraverse.executor": "Run",
-    "Application.KLE.executor": "Run",
-    "Application.KthLargest.executor": "Run",
-    "Application.MaxHeap.executor": "Run",
-    "Application.MinHeap.executor": "Run",
-    "Application.arraylist_swap.executor": "Run",
-    "Application.heap.executor": "Run",
-    "Application.kjfijr.executor": "Run",
-    "Application.tic_tak_toe.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "java",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/dusty-dragon/Documents/JAVA-yard/Heaps",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.HeapPractice.executor&quot;: &quot;Run&quot;,
+    &quot;Application.HeapTraverse.executor&quot;: &quot;Run&quot;,
+    &quot;Application.KLE.executor&quot;: &quot;Run&quot;,
+    &quot;Application.KthLargest.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MaxHeap.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MinHeap.executor&quot;: &quot;Run&quot;,
+    &quot;Application.arraylist_swap.executor&quot;: &quot;Run&quot;,
+    &quot;Application.heap.executor&quot;: &quot;Run&quot;,
+    &quot;Application.kjfijr.executor&quot;: &quot;Run&quot;,
+    &quot;Application.tic_tak_toe.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;java&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/dusty-dragon/Documents/JAVA-yard/Heaps&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Application.KLE">
     <configuration name="HeapTraverse" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Learning.HeapTraverse" />
