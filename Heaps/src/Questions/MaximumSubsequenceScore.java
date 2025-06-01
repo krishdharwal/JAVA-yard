@@ -1,5 +1,8 @@
 package Questions;
 
+import java.util.ArrayList;
+import java.util.List;
+
 class MaximumSubsequenceScore {
 
     long max = 0;
@@ -9,6 +12,10 @@ class MaximumSubsequenceScore {
     }
 
     private void findMaxScore(int[] nums1, int[] nums2, int k, long prefixSum, long min) {
+        List<Integer> list = new ArrayList<>();
+        list.add(2);
+        list.add(4);
+        int i  = list.indexOf(4);
         
     }
 
