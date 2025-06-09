@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5bd3f1c2-3770-421a-9443-769c67ce0e17" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Questions/KFrequentElements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Questions/KFrequentElements.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +53,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "java",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/dusty-dragon/Documents/JAVA-yard/Heaps",
+    "last_opened_file_path": "/home/dusty-dragon/Documents/JAVA-yard/Linked list",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0"

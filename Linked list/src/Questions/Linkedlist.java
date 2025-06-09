@@ -137,7 +137,7 @@ public class Linkedlist {
 
     // node class
 
-    public class ListNode {
+    public static class ListNode {
         public int val;
         public ListNode next;
 

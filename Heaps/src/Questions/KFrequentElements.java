@@ -1,12 +1,8 @@
 package Questions;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.PriorityQueue;
+import java.util.*;
 
 public class KFrequentElements {
-
 
     // Max Heap (priority queue)
 
@@ -67,7 +63,7 @@ public class KFrequentElements {
 
 
     public static void main(String[] args) {
-       int[] ams =  topKFrequent(new int[]{1,1,1,2,2,3},2);
+       int[] ams =  topKFrequent1(new int[]{1,1,1,2,2,3},2);
         System.out.println(Arrays.toString(ams));
     }
 }
