@@ -7,8 +7,10 @@ public class FindTheDifference {
 
         int i = 0;
         while (i < t.length()){
-            if (sb.indexOf(String.valueOf(t.charAt(i))) != -1) sb.deleteCharAt(i);
+            int j = sb.indexOf(String.valueOf(t.charAt(i)));
+            if (j != -1) sb.deleteCharAt(i);
             else return t.charAt(i);
+            i++;
         }
 
         return ' ';
