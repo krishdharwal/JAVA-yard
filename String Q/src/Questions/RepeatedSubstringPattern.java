@@ -1,6 +1,7 @@
 package Questions;
 
 class  RepeatedSubstringPattern {
+
     public boolean repeatedSubstringPattern(String s) {
         int n = s.length();
         for (int i = 1; i <= n/2; i++) {
