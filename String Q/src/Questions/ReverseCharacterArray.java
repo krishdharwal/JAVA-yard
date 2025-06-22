@@ -10,7 +10,14 @@ public class ReverseCharacterArray {
             s++;
             e--;
         }
+        StringBuilder d = new StringBuilder();
+
     }
 
+    public static void main(String[] args) {
+        String sd = "faf";
+        sd +=  'a';
+        System.out.println(sd);
+    }
 
 }
