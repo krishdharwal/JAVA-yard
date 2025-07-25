@@ -1,21 +1,21 @@
 package learing;
 // binary tree
 
-import Questions.Node;
+import Questions.TreNode;
 
 public class Tree {
 
 
-    public Node root;
+    public TreNode root;
 
     // adding part
     public void add(int data) {
       root = add(root, data);
     }
 
-    public Node add(Node node, int data) {
+    public TreNode add(TreNode node, int data) {
         if (node == null) {
-            node = new Node(data);
+            node = new TreNode(data);
             return node;
         }
 
@@ -39,7 +39,7 @@ public class Tree {
         display(root);
     }
 
-    public void display(Node node){
+    public void display(TreNode node){
         if (node == null){
             return;
         }

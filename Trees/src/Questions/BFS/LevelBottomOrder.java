@@ -1,6 +1,6 @@
 package Questions.BFS;
 
-import Questions.Node;
+import Questions.TreNode;
 
 import java.util.*;
 
@@ -9,12 +9,12 @@ public class LevelBottomOrder {
 
     // big brain moment
     // just traverse in normal level order but reverse the ans list of list at last
-    public List<List<Integer>> levelOrderBottom(Node root) {
+    public List<List<Integer>> levelOrderBottom(TreNode root) {
         List<List<Integer>> ans = new ArrayList<>();
         if(root == null){
             return ans;
         }
-        Queue<Node> queue = new LinkedList<>();
+        Queue<TreNode> queue = new LinkedList<>();
         queue.add(root);
 
         while(!queue.isEmpty()){
@@ -22,7 +22,7 @@ public class LevelBottomOrder {
             List<Integer> list = new ArrayList<>();
 
             for(int i=0; i<level; i++){
-                Node temp = queue.poll();
+                TreNode temp = queue.poll();
                 list.add(temp.val);
 
                 if(temp.left != null) queue.add(temp.left);

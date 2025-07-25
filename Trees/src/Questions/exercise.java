@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class exercise {
+public class
+exercise {
 
 
     public static void call(int[] arr,int s,int e) {

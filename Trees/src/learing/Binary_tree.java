@@ -1,16 +1,16 @@
 package learing;
 
 import Questions.DFS.PathSum3;
-import Questions.Node;
+import Questions.TreNode;
 
 import java.util.Scanner;
 
 public class Binary_tree {
-    private Node root;
+    private TreNode root;
     public Binary_tree(){}
 
 
-    public int height(Node node){
+    public int height(TreNode node){
         if (node == null){
             return -1;
         }
@@ -22,9 +22,9 @@ public class Binary_tree {
        root = addNext(root,data);
     }
 
-    private Node addNext(Node node, int data) {
+    private TreNode addNext(TreNode node, int data) {
         if (node == null){
-            node = new Node(data);
+            node = new TreNode(data);
             return node;
         }
 
@@ -47,7 +47,7 @@ public class Binary_tree {
         Tree_form_display(root,0);
     }
 
-    private void Tree_form_display(Node node, int level) {
+    private void Tree_form_display(TreNode node, int level) {
         if (node == null){
             return;
         }
@@ -74,7 +74,7 @@ public class Binary_tree {
         display_IN_Order(this.root);
     }
 
-    private void display_IN_Order(Node node) {
+    private void display_IN_Order(TreNode node) {
         if (node == null){
             return;
         }
@@ -91,7 +91,7 @@ public class Binary_tree {
 
     }
 
-    private void display_Pre_Order(Node node) {
+    private void display_Pre_Order(TreNode node) {
         if (node == null){
             return;
         }
@@ -106,7 +106,7 @@ public class Binary_tree {
 
     }
 
-    private void display_Post_Order(Node node) {
+    private void display_Post_Order(TreNode node) {
         if (node == null){
             return;
         }
@@ -134,10 +134,10 @@ public class Binary_tree {
 //        node.display();
 //        node.display_Pre_Order();
 //        node.display_Post_Order();
-        PathSum3 p3 = new PathSum3();
-       int ans =  p3.pathSum(node.root,8);
-        System.out.println("ANS -> " + ans);
-        node.Tree_form_display();
+//        PathSum3 p3 = new PathSum3();
+//       int ans =  p3.pathSum(node.root,8);
+//        System.out.println("ANS -> " + ans);
+//        node.Tree_form_display();
 
     }
 

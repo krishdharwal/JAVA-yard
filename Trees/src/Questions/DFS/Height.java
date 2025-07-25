@@ -1,15 +1,15 @@
 package Questions.DFS;
 
-import Questions.Node;
+import Questions.TreNode;
 
 // using post order traversal to find height
 public class Height {
 
-    public int height(Node root){
+    public int height(TreNode root){
         return height(root,0,0);
     }
 
-    private int height(Node node, int mh , int h) {
+    private int height(TreNode node, int mh , int h) {
         if (node == null){
             return h;
         }

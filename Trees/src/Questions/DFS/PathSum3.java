@@ -1,7 +1,10 @@
 package Questions.DFS;
 
-import Questions.Node;
 import Questions.TreeNode;
+//
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Stack;
 
 
 public class PathSum3 {
@@ -31,6 +34,20 @@ public class PathSum3 {
         }
         count += findSum(node.left,tar,sum) + findSum(node.right,tar,sum);
         return count;
+    }
+
+    public static void main(String[] args){
+        LinkedList<Integer> ll = new LinkedList<>();
+        ll.add(1);
+        ll.add(23);
+        ll.add(33);
+        System.out.println(ll);
+
+        Queue<Integer> q = new LinkedList<>();
+        Stack<Integer> s = new Stack<>();
+
+
+
     }
 
 }
